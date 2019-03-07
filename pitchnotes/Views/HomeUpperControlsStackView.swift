@@ -20,18 +20,24 @@ class HomeUpperControlsUIStackView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        let subviews = [UIColor.gray, .darkGray, .black].map{ (color) -> UIView in
-            let v = UIView()
-            v.backgroundColor = color
-            return v
+        
+        let buttonViews = [#imageLiteral(resourceName: "top_left_ham"),#imageLiteral(resourceName: "idea_top"), #imageLiteral(resourceName: "top_right_pin")].map { (img) -> UIView in
+            let button = UIButton(type: .system)
+            button.setImage(img.withRenderingMode(.alwaysOriginal), for: .normal)
+            return button
         }
         
-        subviews.forEach { (subView) in
-            addArrangedSubview(subView)
-        }
+        addArrangedSubview(buttonViews[0])
+        addArrangedSubview(UIView())
+        addArrangedSubview(buttonViews[1])
+        addArrangedSubview(UIView())
+        addArrangedSubview(buttonViews[2])
         
-        distribution = .fillEqually
-        heightAnchor.constraint(equalToConstant: 100).isActive = true
+        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        distribution = .equalCentering
+        isLayoutMarginsRelativeArrangement = true
+        layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
+        
     }
     
     required init(coder: NSCoder) {

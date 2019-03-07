@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         let stackView = UIStackView(arrangedSubviews: [topStackView, blueView, bottomView])
         stackView.axis = .vertical
         view.addSubview(stackView)
-        stackView.fillSuperview()
+        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
     }
 
 
