@@ -12,7 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let topStackView = HomeUpperControlsUIStackView()
+        
+        let blueView = UIView()
+        blueView.backgroundColor = .blue
+        
+        let bottomView = HomeBottomControlsUIStackView()
+
+        let stackView = UIStackView(arrangedSubviews: [topStackView, blueView, bottomView])
+        stackView.axis = .vertical
+        view.addSubview(stackView)
+        stackView.fillSuperview()
     }
 
 
