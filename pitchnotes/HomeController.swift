@@ -12,14 +12,20 @@ let topStackView = HomeUpperControlsUIStackView()
 let cardsDeckView = UIView()
 let bottomView = HomeBottomControlsUIStackView()
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
-        let cardView = CardView()
-        cardsDeckView.addSubview(cardView)
-        cardView.fillSuperview()
+        setupCards()
+    }
+    
+    fileprivate func setupCards() {
+        (0..<10).forEach { (_) in
+            let cardView = CardView()
+            cardsDeckView.addSubview(cardView)
+            cardView.fillSuperview()
+        }
     }
     
     fileprivate func setupLayout() {

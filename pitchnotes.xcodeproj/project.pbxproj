@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B0651492215D27700D7891E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B0651482215D27700D7891E /* GoogleService-Info.plist */; };
 		3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA162215C7A60007D747 /* AppDelegate.swift */; };
-		3B45EA192215C7A60007D747 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA182215C7A60007D747 /* ViewController.swift */; };
+		3B45EA192215C7A60007D747 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA182215C7A60007D747 /* HomeController.swift */; };
 		3B45EA1C2215C7A60007D747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B45EA1A2215C7A60007D747 /* Main.storyboard */; };
 		3B45EA1E2215C7A70007D747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B45EA1D2215C7A70007D747 /* Assets.xcassets */; };
 		3B45EA212215C7A70007D747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B45EA1F2215C7A70007D747 /* LaunchScreen.storyboard */; };
@@ -42,7 +42,7 @@
 		3B0651482215D27700D7891E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B45EA132215C7A60007D747 /* pitchnotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pitchnotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B45EA162215C7A60007D747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B45EA182215C7A60007D747 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3B45EA182215C7A60007D747 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		3B45EA1B2215C7A60007D747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B45EA1D2215C7A70007D747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B45EA202215C7A70007D747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -107,11 +107,12 @@
 		3B45EA152215C7A60007D747 /* pitchnotes */ = {
 			isa = PBXGroup;
 			children = (
+				3BFFC6772232144000C0D986 /* Models */,
 				3BE37BED2231BD570091A7BA /* Views */,
 				3BE37BEA2231A63E0091A7BA /* Extensions */,
 				3B0651482215D27700D7891E /* GoogleService-Info.plist */,
 				3B45EA162215C7A60007D747 /* AppDelegate.swift */,
-				3B45EA182215C7A60007D747 /* ViewController.swift */,
+				3B45EA182215C7A60007D747 /* HomeController.swift */,
 				3B45EA1A2215C7A60007D747 /* Main.storyboard */,
 				3B45EA1D2215C7A70007D747 /* Assets.xcassets */,
 				3B45EA1F2215C7A70007D747 /* LaunchScreen.storyboard */,
@@ -154,6 +155,13 @@
 				3BFFC6752231E79700C0D986 /* CardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3BFFC6772232144000C0D986 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BE37BF12231C0BD0091A7BA /* HomeUpperControlsStackView.swift in Sources */,
-				3B45EA192215C7A60007D747 /* ViewController.swift in Sources */,
+				3B45EA192215C7A60007D747 /* HomeController.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
 				3BFFC6762231E79700C0D986 /* CardView.swift in Sources */,

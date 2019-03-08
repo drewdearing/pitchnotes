@@ -18,38 +18,73 @@ class CardView: UIView {
     }
     */
     
-    let image = UIImageView(image: #imageLiteral(resourceName: "40279285_10216911105591153_8570435745418838016_n (1)"))
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 10
         clipsToBounds = true
-        addSubview(image)
-        image.fillSuperview()
-        image.contentMode = .scaleAspectFill
+        setupCard()
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGesture)
     }
+    
+    fileprivate func setupCard(){
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "40279285_10216911105591153_8570435745418838016_n (1)"))
+        imageView.contentMode = .scaleAspectFill
+        let ideaOverlay = UIView()
+        ideaOverlay.backgroundColor = .black
+        ideaOverlay.layer.opacity = 0.3
+        imageView.addSubview(ideaOverlay)
+        ideaOverlay.fillSuperview()
+        let cardBottomView = UIView()
+        cardBottomView.backgroundColor = .white
+        cardBottomView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        
+        let stackView = UIStackView(arrangedSubviews: [imageView, cardBottomView])
+        stackView.axis = .vertical
+        addSubview(stackView)
+        stackView.fillSuperview()
+        layer.masksToBounds = true
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 1.0
+        
+    }
+    
+    
     
     @objc fileprivate func handlePan(gesture: UIPanGestureRecognizer){
         switch gesture.state {
         case .changed:
             handleGestureChange(gesture)
         case .ended:
-            handleGestureEnd()
+            handleGestureEnd(gesture)
         default:
             ()
         }
     }
     
-    fileprivate func handleGestureEnd() {
-        UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {self.transform = .identity})
+    fileprivate func handleGestureEnd(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: nil)
+        let shouldDismiss = abs(translation.x) > (self.superview!.frame.width/2)
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            if(shouldDismiss){
+                self.layer.opacity = 0
+                self.removeFromSuperview()
+            }
+            else{
+                self.layer.opacity = 1
+                self.transform = .identity
+            }
+        })
     }
     
     fileprivate func handleGestureChange(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: nil)
-        self.transform = CGAffineTransform(translationX: translation.x, y: translation.y)
+        let degrees = translation.x / 20
+        let angle = degrees * .pi / 180
+        let rotationalTransform = CGAffineTransform(rotationAngle: angle)
+        self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
+        self.layer.opacity = Float(1-(abs(translation.x)/(self.superview!.frame.width/2)))
     }
     
     required init?(coder aDecoder: NSCoder) {
