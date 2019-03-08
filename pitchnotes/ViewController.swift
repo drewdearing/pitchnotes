@@ -8,24 +8,29 @@
 
 import UIKit
 
+let topStackView = HomeUpperControlsUIStackView()
+let cardsDeckView = UIView()
+let bottomView = HomeBottomControlsUIStackView()
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let topStackView = HomeUpperControlsUIStackView()
-        
-        let blueView = UIView()
-        blueView.backgroundColor = .blue
-        
-        let bottomView = HomeBottomControlsUIStackView()
-
-        let stackView = UIStackView(arrangedSubviews: [topStackView, blueView, bottomView])
+        setupLayout()
+        let cardView = CardView()
+        cardsDeckView.addSubview(cardView)
+        cardView.fillSuperview()
+    }
+    
+    fileprivate func setupLayout() {
+        let stackView = UIStackView(arrangedSubviews: [topStackView, cardsDeckView, bottomView])
         stackView.axis = .vertical
         view.addSubview(stackView)
         stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
+        stackView.bringSubviewToFront(cardsDeckView)
     }
-
 
 }
 

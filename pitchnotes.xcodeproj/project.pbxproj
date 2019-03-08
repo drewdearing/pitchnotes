@@ -18,6 +18,7 @@
 		3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE37BEB2231A63E0091A7BA /* Extensions+UIView.swift */; };
 		3BE37BEF2231BD830091A7BA /* HomeBottomControlsUIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE37BEE2231BD830091A7BA /* HomeBottomControlsUIStackView.swift */; };
 		3BE37BF12231C0BD0091A7BA /* HomeUpperControlsStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE37BF02231C0BD0091A7BA /* HomeUpperControlsStackView.swift */; };
+		3BFFC6762231E79700C0D986 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFFC6752231E79700C0D986 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3BE37BEB2231A63E0091A7BA /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		3BE37BEE2231BD830091A7BA /* HomeBottomControlsUIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomControlsUIStackView.swift; sourceTree = "<group>"; };
 		3BE37BF02231C0BD0091A7BA /* HomeUpperControlsStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUpperControlsStackView.swift; sourceTree = "<group>"; };
+		3BFFC6752231E79700C0D986 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			children = (
 				3BE37BEE2231BD830091A7BA /* HomeBottomControlsUIStackView.swift */,
 				3BE37BF02231C0BD0091A7BA /* HomeUpperControlsStackView.swift */,
+				3BFFC6752231E79700C0D986 /* CardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				3B45EA192215C7A60007D747 /* ViewController.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
+				3BFFC6762231E79700C0D986 /* CardView.swift in Sources */,
 				3BE37BEF2231BD830091A7BA /* HomeBottomControlsUIStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
