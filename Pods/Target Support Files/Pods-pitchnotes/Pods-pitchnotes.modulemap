@@ -1,0 +1,6 @@
+framework module Pods_pitchnotes {
+  umbrella header "Pods-pitchnotes-umbrella.h"
+
+  export *
+  module * { export * }
+}

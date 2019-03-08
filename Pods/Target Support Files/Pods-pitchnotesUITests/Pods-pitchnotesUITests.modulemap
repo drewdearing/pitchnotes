@@ -1,0 +1,6 @@
+framework module Pods_pitchnotesUITests {
+  umbrella header "Pods-pitchnotesUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
