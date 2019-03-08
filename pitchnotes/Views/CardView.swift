@@ -33,12 +33,17 @@ class CardView: UIView {
         imageView.contentMode = .scaleAspectFill
         let ideaOverlay = UIView()
         ideaOverlay.backgroundColor = .black
-        ideaOverlay.layer.opacity = 0.3
+        ideaOverlay.layer.opacity = 0.2
         imageView.addSubview(ideaOverlay)
         ideaOverlay.fillSuperview()
         let cardBottomView = UIView()
         cardBottomView.backgroundColor = .white
         cardBottomView.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        let InformationLabel = UILabel()
+        cardBottomView.addSubview(InformationLabel)
+        InformationLabel.text = "Drew"
+        InformationLabel.font = UIFont.systemFont(ofSize: 34, weight: .heavy)
+        InformationLabel.anchor(top: cardBottomView.topAnchor, leading: nil, bottom: nil, trailing: nil)
         
         let stackView = UIStackView(arrangedSubviews: [imageView, cardBottomView])
         stackView.axis = .vertical
@@ -47,7 +52,7 @@ class CardView: UIView {
         layer.masksToBounds = true
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.0
-        
+
     }
     
     
