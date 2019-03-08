@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //logo.fillSuperview()
     }
     
 }
