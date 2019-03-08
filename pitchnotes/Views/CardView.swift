@@ -52,7 +52,6 @@ class CardView: UIView {
         layer.masksToBounds = true
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.0
-
     }
     
     

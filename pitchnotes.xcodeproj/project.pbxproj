@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3B0651492215D27700D7891E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B0651482215D27700D7891E /* GoogleService-Info.plist */; };
+		3B2471AA2232F7B5001E7D07 /* LoginControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2471A92232F7B5001E7D07 /* LoginControllerViewController.swift */; };
 		3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA162215C7A60007D747 /* AppDelegate.swift */; };
 		3B45EA192215C7A60007D747 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA182215C7A60007D747 /* HomeController.swift */; };
 		3B45EA1C2215C7A60007D747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B45EA1A2215C7A60007D747 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		3B0651482215D27700D7891E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3B2471A92232F7B5001E7D07 /* LoginControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerViewController.swift; sourceTree = "<group>"; };
 		3B45EA132215C7A60007D747 /* pitchnotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pitchnotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B45EA162215C7A60007D747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B45EA182215C7A60007D747 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				3B45EA1D2215C7A70007D747 /* Assets.xcassets */,
 				3B45EA1F2215C7A70007D747 /* LaunchScreen.storyboard */,
 				3B45EA222215C7A70007D747 /* Info.plist */,
+				3B2471A92232F7B5001E7D07 /* LoginControllerViewController.swift */,
 			);
 			path = pitchnotes;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				3BE37BF12231C0BD0091A7BA /* HomeUpperControlsStackView.swift in Sources */,
 				3B45EA192215C7A60007D747 /* HomeController.swift in Sources */,
+				3B2471AA2232F7B5001E7D07 /* LoginControllerViewController.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
 				3BFFC6762231E79700C0D986 /* CardView.swift in Sources */,
