@@ -8,6 +8,8 @@
 
 import UIKit
 
+let swipeOverlay = UIView()
+
 class CardView: UIView {
 
     /*
@@ -52,9 +54,12 @@ class CardView: UIView {
         layer.masksToBounds = true
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.0
+        
+        swipeOverlay.backgroundColor = .white
+        swipeOverlay.layer.opacity = 0
+        stackView.addSubview(swipeOverlay)
+        swipeOverlay.fillSuperview()
     }
-    
-    
     
     @objc fileprivate func handlePan(gesture: UIPanGestureRecognizer){
         switch gesture.state {
@@ -78,6 +83,8 @@ class CardView: UIView {
             else{
                 self.layer.opacity = 1
                 self.transform = .identity
+                swipeOverlay.layer.opacity = 0
+                swipeOverlay.backgroundColor = .white
             }
         })
     }
@@ -89,6 +96,17 @@ class CardView: UIView {
         let rotationalTransform = CGAffineTransform(rotationAngle: angle)
         self.transform = rotationalTransform.translatedBy(x: translation.x, y: translation.y)
         self.layer.opacity = Float(1-(abs(translation.x)/(self.superview!.frame.width/2)))
+        if(translation.x > 0){
+            swipeOverlay.backgroundColor = .green
+        }
+        else if(translation.x < 0){
+            swipeOverlay.backgroundColor = .red
+        }
+        else {
+            swipeOverlay.backgroundColor = .white
+        }
+        
+        swipeOverlay.layer.opacity = 1.0-self.layer.opacity
     }
     
     required init?(coder aDecoder: NSCoder) {
