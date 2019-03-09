@@ -62,6 +62,16 @@ class HomeController: UIViewController {
                 do {
                     print(String(data: data, encoding: String.Encoding.utf8))
                     let ideaDeck = try JSONDecoder().decode(IdeaDeck.self, from: data)
+                    ideaDeck.deck.forEach({ (idea) in
+                        DispatchQueue.main.async {
+                            let cardView = CardView()
+                            cardView.cardNameLabel.text = idea.owner.name
+                            cardView.cardTitleLabel.text = idea.name
+                            cardView.cardDescLabel.text = idea.description
+                            cardsDeckView.addSubview(cardView)
+                            cardView.fillSuperview()
+                        }
+                    })
                 } catch let jsonErr {
                     print("Error: \(jsonErr)")
                 }
@@ -73,19 +83,10 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         setupLayout()
         setupHamburgerView()
-        setupCards()
     }
     
     fileprivate func setupHamburgerView(){
         
-    }
-    
-    fileprivate func setupCards() {
-        (0..<10).forEach { (_) in
-            let cardView = CardView()
-            cardsDeckView.addSubview(cardView)
-            cardView.fillSuperview()
-        }
     }
     
     fileprivate func setupLayout() {

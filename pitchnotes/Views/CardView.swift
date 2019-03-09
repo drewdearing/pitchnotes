@@ -8,17 +8,13 @@
 
 import UIKit
 
-let swipeOverlay = UIView()
-
 class CardView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
+    let swipeOverlay = UIView()
+    let cardImageView = UIImageView(image: #imageLiteral(resourceName: "40279285_10216911105591153_8570435745418838016_n (1)"))
+    let cardNameLabel = UILabel()
+    let cardTitleLabel = UILabel()
+    let cardDescLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,30 +27,42 @@ class CardView: UIView {
     }
     
     fileprivate func setupCard(){
-        let imageView = UIImageView(image: #imageLiteral(resourceName: "40279285_10216911105591153_8570435745418838016_n (1)"))
-        imageView.contentMode = .scaleAspectFill
+        cardImageView.contentMode = .scaleAspectFill
+        //cardImageView.backgroundColor = .yellow
         let ideaOverlay = UIView()
         ideaOverlay.backgroundColor = .black
-        ideaOverlay.layer.opacity = 0.2
-        imageView.addSubview(ideaOverlay)
+        ideaOverlay.layer.opacity = 0.3
+        cardImageView.addSubview(ideaOverlay)
         ideaOverlay.fillSuperview()
+        
+        
         let cardBottomView = UIView()
         cardBottomView.backgroundColor = .white
-        cardBottomView.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        let InformationLabel = UILabel()
-        cardBottomView.addSubview(InformationLabel)
-        InformationLabel.text = "Drew"
-        InformationLabel.font = UIFont.systemFont(ofSize: 34, weight: .heavy)
-        InformationLabel.anchor(top: cardBottomView.topAnchor, leading: nil, bottom: nil, trailing: nil)
+        cardBottomView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        let stackView = UIStackView(arrangedSubviews: [imageView, cardBottomView])
+        cardBottomView.addSubview(cardDescLabel)
+        cardDescLabel.textColor = .black
+        cardDescLabel.font = UIFont(name:"Helvetica", size:18)
+        cardDescLabel.anchor(top: cardBottomView.topAnchor, leading: cardBottomView.leadingAnchor, bottom: nil, trailing: cardBottomView.trailingAnchor)
+        
+        cardImageView.addSubview(cardNameLabel)
+        cardNameLabel.textColor = .white
+        cardNameLabel.font = UIFont(name:"Helvetica-Bold", size:30)
+        cardNameLabel.anchor(top: nil, leading: cardImageView.leadingAnchor, bottom: cardImageView.bottomAnchor, trailing: cardImageView.trailingAnchor)
+        
+        cardImageView.addSubview(cardTitleLabel)
+        cardTitleLabel.fillSuperview()
+        cardTitleLabel.textColor = .white
+        cardTitleLabel.font = UIFont(name:"Helvetica-Bold", size:60)
+        cardTitleLabel.textAlignment = .center
+        
+        let stackView = UIStackView(arrangedSubviews: [cardImageView, cardBottomView])
         stackView.axis = .vertical
         addSubview(stackView)
         stackView.fillSuperview()
         layer.masksToBounds = true
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.0
-        
         swipeOverlay.backgroundColor = .white
         swipeOverlay.layer.opacity = 0
         stackView.addSubview(swipeOverlay)
@@ -83,8 +91,8 @@ class CardView: UIView {
             else{
                 self.layer.opacity = 1
                 self.transform = .identity
-                swipeOverlay.layer.opacity = 0
-                swipeOverlay.backgroundColor = .white
+                self.swipeOverlay.layer.opacity = 0
+                self.swipeOverlay.backgroundColor = .white
             }
         })
     }
