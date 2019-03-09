@@ -64,10 +64,11 @@ class HomeController: UIViewController {
                     let ideaDeck = try JSONDecoder().decode(IdeaDeck.self, from: data)
                     ideaDeck.deck.forEach({ (idea) in
                         DispatchQueue.main.async {
-                            let cardView = CardView()
-                            cardView.cardNameLabel.text = idea.owner.name
-                            cardView.cardTitleLabel.text = idea.name
-                            cardView.cardDescLabel.text = idea.description
+                            let cardView = IdeaCardView()
+                            cardView.cardUserName.text = idea.owner.name
+                            cardView.cardTitle.text = idea.name
+                            cardView.cardDesc.text = idea.description
+                            cardView.cardCategory.text = idea.category
                             cardsDeckView.addSubview(cardView)
                             cardView.fillSuperview()
                         }
