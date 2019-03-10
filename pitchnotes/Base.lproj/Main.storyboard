@@ -81,6 +81,14 @@
             </objects>
             <point key="canvasLocation" x="666.66666666666674" y="25.271739130434785"/>
         </scene>
+        <!--MatchedGroups-->
+        <scene sceneID="Kbd-pr-xNL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MatchedGroups" id="4WE-hc-Xpw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oc5-TC-s2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1239" y="-455"/>
+        </scene>
         <!--Home Controller-->
         <scene sceneID="oW8-3J-Fcn">
             <objects>
@@ -98,6 +106,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZ5-LV-25T">
                                                 <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="80"/>
                                                 <state key="normal" image="top_left_ham"/>
+                                                <connections>
+                                                    <segue destination="4WE-hc-Xpw" kind="show" id="kqT-UJ-1kb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8D-lQ-vrV">
                                                 <rect key="frame" x="127.33333333333334" y="0.0" width="127.33333333333334" height="80"/>
@@ -168,11 +179,11 @@
     </scenes>
     <resources>
         <image name="dismiss_circle" width="80" height="80"/>
-        <image name="idea_top" width="78" height="50"/>
+        <image name="idea_top" width="157" height="100"/>
         <image name="like_circle" width="80" height="80"/>
         <image name="login_logo" width="790" height="593"/>
         <image name="super_like_circle" width="64" height="64"/>
         <image name="top_left_ham" width="23" height="16"/>
-        <image name="top_right_pin" width="30" height="30"/>
+        <image name="top_right_pin" width="30.5" height="30.5"/>
     </resources>
 </document>
