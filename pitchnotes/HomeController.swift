@@ -9,11 +9,6 @@
 import UIKit
 import FirebaseAuth
 
-let topStackView = HomeUpperControlsUIStackView()
-let cardsDeckView = UIView()
-let bottomView = HomeBottomControlsUIStackView()
-let hamburgerView = UIView()
-
 struct IdeaDeck: Decodable {
     let deck: [Idea]
 }
@@ -32,14 +27,17 @@ struct Owner: Decodable {
     let photoURL: String
 }
 
-struct User: Decodable {
-    let name: String
-}
-
 class HomeController: UIViewController {
+    
+    
+    @IBOutlet weak var cardDeckView: UIView!
     
     override func viewWillAppear(_ animated: Bool) {
         getIdeaDeck()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     func getIdeaDeck() {
@@ -69,7 +67,12 @@ class HomeController: UIViewController {
                             cardView.cardTitle.text = idea.name
                             cardView.cardDesc.text = idea.description
                             cardView.cardCategory.text = idea.category
-                            cardsDeckView.addSubview(cardView)
+                            let url = URL(string: idea.owner.photoURL)
+                            let data = try? Data(contentsOf: url!)
+                            if let imageData = data {
+                                cardView.cardProfilePic.image = UIImage(data:imageData)
+                            }
+                            self.cardDeckView.addSubview(cardView)
                             cardView.fillSuperview()
                         }
                     })
@@ -78,26 +81,6 @@ class HomeController: UIViewController {
                 }
                 }.resume()
         }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupLayout()
-        setupHamburgerView()
-    }
-    
-    fileprivate func setupHamburgerView(){
-        
-    }
-    
-    fileprivate func setupLayout() {
-        let stackView = UIStackView(arrangedSubviews: [topStackView, cardsDeckView, bottomView])
-        stackView.axis = .vertical
-        view.addSubview(stackView)
-        stackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
-        stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = .init(top: 0, left: 16, bottom: 0, right: 16)
-        stackView.bringSubviewToFront(cardsDeckView)
     }
 
 }
