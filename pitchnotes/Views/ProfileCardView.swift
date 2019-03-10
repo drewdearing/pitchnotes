@@ -9,16 +9,16 @@
 import UIKit
 import FirebaseAuth
 
-class IdeaCardView: CardView {
+class ProfileCardView: CardView {
+    
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var cardIdeaPic: UIImageView!
-    @IBOutlet weak var cardDetailView: UIView!
-    @IBOutlet weak var cardProfilePic: UIImageView!
     @IBOutlet weak var cardUserName: UILabel!
-    @IBOutlet weak var cardTitle: UILabel!
-    @IBOutlet weak var cardCategory: UILabel!
-    @IBOutlet weak var cardDesc: UILabel!
+    @IBOutlet weak var cardIdeaName: UILabel!
+    @IBOutlet weak var cardUserBio: UILabel!
+    @IBOutlet weak var cardProfilePic: UIImageView!
+    @IBOutlet weak var cardIdeaPic: UIImageView!
+    @IBOutlet weak var cardClassYear: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,8 +31,8 @@ class IdeaCardView: CardView {
     }
     
     private func commonInit() {
-        self.isUser = false
-        Bundle.main.loadNibNamed("IdeaCard", owner: self, options: nil)
+        self.isUser = true
+        Bundle.main.loadNibNamed("ProfileCard", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.fillSuperview()
@@ -57,4 +57,5 @@ class IdeaCardView: CardView {
         addSubview(swipeOverlay)
         swipeOverlay.fillSuperview()
     }
+    
 }

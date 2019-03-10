@@ -24,6 +24,11 @@ struct Idea: Codable {
     var owner: Owner
 }
 
+struct Profile: Codable {
+    var id: String
+    var name: String
+}
+
 struct Owner: Codable {
     var id: String
     var name: String
@@ -32,23 +37,33 @@ struct Owner: Codable {
 
 class HomeController: UIViewController {
     
-    var ideaDeck = Array<IdeaCardView>()
+    var cardDeck = Array<CardView>()
+    var ideasCurrentDeck = true
     
     @IBOutlet weak var cardDeckView: UIView!
     
+    @IBAction func switchDecks(_ sender: Any) {
+        if(ideasCurrentDeck){
+            getProfileDeck()
+        }
+        else{
+            getIdeaDeck()
+        }
+    }
+    
     @IBAction func likeButton(_ sender: Any) {
         if let card = getCurrentCard(){
-            let cardIndex = ideaDeck.count-1
+            let cardIndex = cardDeck.count-1
             card.swipeRight()
-            ideaDeck.remove(at: cardIndex)
+            cardDeck.remove(at: cardIndex)
         }
     }
     
     @IBAction func dislikeButton(_ sender: Any) {
         if let card = getCurrentCard(){
-            let cardIndex = ideaDeck.count-1
+            let cardIndex = cardDeck.count-1
             card.swipeLeft()
-            ideaDeck.remove(at: cardIndex)
+            cardDeck.remove(at: cardIndex)
         }
     }
     
@@ -60,16 +75,25 @@ class HomeController: UIViewController {
         super.viewDidLoad()
     }
     
-    func getCurrentCard() -> IdeaCardView? {
-        if (self.ideaDeck.count > 0){
-            return self.ideaDeck[self.ideaDeck.count-1]
+    func getCurrentCard() -> CardView? {
+        if (self.cardDeck.count > 0){
+            return self.cardDeck[self.cardDeck.count-1]
         }
         else{
             return nil
         }
     }
     
+    func clearDeck(){
+        for view in cardDeckView.subviews {
+            view.removeFromSuperview()
+        }
+        cardDeck = Array<CardView>()
+    }
+    
     func getIdeaDeck() {
+        clearDeck()
+        ideasCurrentDeck = true
         let currentUser = Auth.auth().currentUser
         currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
             if error != nil {
@@ -92,7 +116,8 @@ class HomeController: UIViewController {
                     ideaDeck.deck.forEach({ (idea) in
                         DispatchQueue.main.async {
                             let cardView = IdeaCardView()
-                            cardView.idea = idea
+                            cardView.ideaUid = idea.id
+                            cardView.userUid = currentUser!.uid
                             cardView.cardUserName.text = idea.owner.name
                             cardView.cardTitle.text = idea.name
                             cardView.cardDesc.text = idea.description
@@ -101,10 +126,11 @@ class HomeController: UIViewController {
                             let data = try? Data(contentsOf: url!)
                             if let imageData = data {
                                 cardView.cardProfilePic.image = UIImage(data:imageData)
+                                cardView.cardIdeaPic.image = UIImage(data:imageData)
                             }
                             self.cardDeckView.addSubview(cardView)
                             cardView.fillSuperview()
-                            self.ideaDeck.append(cardView)
+                            self.cardDeck.append(cardView)
                         }
                     })
                 } catch let jsonErr {
@@ -112,6 +138,17 @@ class HomeController: UIViewController {
                 }
                 }.resume()
         }
+    }
+    
+    func getProfileDeck(){
+        clearDeck()
+        ideasCurrentDeck = false
+        let cardView = ProfileCardView()
+        cardView.ideaUid = "ideaID"
+        cardView.userUid = "person'sID"
+        self.cardDeckView.addSubview(cardView)
+        cardView.fillSuperview()
+        self.cardDeck.append(cardView)
     }
 
 }
