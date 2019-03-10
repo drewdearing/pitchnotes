@@ -92,6 +92,7 @@ class HomeController: UIViewController {
                     ideaDeck.deck.forEach({ (idea) in
                         DispatchQueue.main.async {
                             let cardView = IdeaCardView()
+                            cardView.idea = idea
                             cardView.cardUserName.text = idea.owner.name
                             cardView.cardTitle.text = idea.name
                             cardView.cardDesc.text = idea.description
