@@ -124,6 +124,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		37BD48512235AD1F00BC06D3 /* IdeaGroups */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IdeaGroups;
+			sourceTree = "<group>";
+		};
 		3B45EA0A2215C7A60007D747 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +209,7 @@
 		3BE37BED2231BD570091A7BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37BD48512235AD1F00BC06D3 /* IdeaGroups */,
 				3B519BF122345AF30039BAFC /* IdeaCard.xib */,
 				3B519BF322345B060039BAFC /* IdeaCardView.swift */,
 				3B2B089522350049000BB2A4 /* CardView.swift */,

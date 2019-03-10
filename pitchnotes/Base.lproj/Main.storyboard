@@ -87,12 +87,12 @@
                 <viewControllerPlaceholder storyboardName="MatchedGroups" id="4WE-hc-Xpw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc5-TC-s2x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1239" y="-455"/>
+            <point key="canvasLocation" x="2180" y="26"/>
         </scene>
         <!--Home Controller-->
         <scene sceneID="oW8-3J-Fcn">
             <objects>
-                <viewController id="GCS-tg-GkB" customClass="HomeController" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeView" id="GCS-tg-GkB" customClass="HomeController" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l7R-3b-Kgm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
