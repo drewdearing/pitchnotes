@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37BD48272233034700BC06D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37BD48262233034600BC06D3 /* GoogleService-Info.plist */; };
-		3B2471AA2232F7B5001E7D07 /* LoginControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2471A92232F7B5001E7D07 /* LoginControllerViewController.swift */; };
+		3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2471A92232F7B5001E7D07 /* LoginController.swift */; };
 		3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA162215C7A60007D747 /* AppDelegate.swift */; };
 		3B45EA192215C7A60007D747 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA182215C7A60007D747 /* HomeController.swift */; };
 		3B45EA1C2215C7A60007D747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B45EA1A2215C7A60007D747 /* Main.storyboard */; };
@@ -44,7 +44,7 @@
 /* Begin PBXFileReference section */
 		001697E354611BDA15B7B67B /* Pods-pitchnotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pitchnotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pitchnotesUITests/Pods-pitchnotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		37BD48262233034600BC06D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3B2471A92232F7B5001E7D07 /* LoginControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginControllerViewController.swift; sourceTree = "<group>"; };
+		3B2471A92232F7B5001E7D07 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3B45EA132215C7A60007D747 /* pitchnotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pitchnotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B45EA162215C7A60007D747 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B45EA182215C7A60007D747 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -134,17 +134,16 @@
 		3B45EA152215C7A60007D747 /* pitchnotes */ = {
 			isa = PBXGroup;
 			children = (
+				3BCAC153223497D10090066B /* Controllers */,
 				3BFFC6772232144000C0D986 /* Models */,
 				3BE37BED2231BD570091A7BA /* Views */,
 				3BE37BEA2231A63E0091A7BA /* Extensions */,
 				3B45EA162215C7A60007D747 /* AppDelegate.swift */,
-				3B45EA182215C7A60007D747 /* HomeController.swift */,
 				3B45EA1A2215C7A60007D747 /* Main.storyboard */,
 				3B45EA1D2215C7A70007D747 /* Assets.xcassets */,
 				3B45EA1F2215C7A70007D747 /* LaunchScreen.storyboard */,
 				3B45EA222215C7A70007D747 /* Info.plist */,
 				37BD48262233034600BC06D3 /* GoogleService-Info.plist */,
-				3B2471A92232F7B5001E7D07 /* LoginControllerViewController.swift */,
 			);
 			path = pitchnotes;
 			sourceTree = "<group>";
@@ -165,6 +164,15 @@
 				3B45EA382215C7A70007D747 /* Info.plist */,
 			);
 			path = pitchnotesUITests;
+			sourceTree = "<group>";
+		};
+		3BCAC153223497D10090066B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3B45EA182215C7A60007D747 /* HomeController.swift */,
+				3B2471A92232F7B5001E7D07 /* LoginController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		3BE37BEA2231A63E0091A7BA /* Extensions */ = {
@@ -422,7 +430,7 @@
 			files = (
 				3B519BF422345B060039BAFC /* IdeaCardView.swift in Sources */,
 				3B45EA192215C7A60007D747 /* HomeController.swift in Sources */,
-				3B2471AA2232F7B5001E7D07 /* LoginControllerViewController.swift in Sources */,
+				3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
 			);
