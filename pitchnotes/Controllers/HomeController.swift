@@ -9,28 +9,48 @@
 import UIKit
 import FirebaseAuth
 
-struct IdeaDeck: Decodable {
-    let deck: [Idea]
+struct IdeaDeck: Codable {
+    var deck: [Idea]
+    init(){
+        self.deck = Array<Idea>()
+    }
 }
 
-struct Idea: Decodable {
-    let id: String
-    let name: String
-    let category: String
-    let description: String
-    let owner: Owner
+struct Idea: Codable {
+    var id: String
+    var name: String
+    var category: String
+    var description: String
+    var owner: Owner
 }
 
-struct Owner: Decodable {
-    let id: String
-    let name: String
-    let photoURL: String
+struct Owner: Codable {
+    var id: String
+    var name: String
+    var photoURL: String
 }
 
 class HomeController: UIViewController {
     
+    var ideaDeck = Array<IdeaCardView>()
     
     @IBOutlet weak var cardDeckView: UIView!
+    
+    @IBAction func likeButton(_ sender: Any) {
+        if let card = getCurrentCard(){
+            let cardIndex = ideaDeck.count-1
+            card.swipeRight()
+            ideaDeck.remove(at: cardIndex)
+        }
+    }
+    
+    @IBAction func dislikeButton(_ sender: Any) {
+        if let card = getCurrentCard(){
+            let cardIndex = ideaDeck.count-1
+            card.swipeLeft()
+            ideaDeck.remove(at: cardIndex)
+        }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         getIdeaDeck()
@@ -38,6 +58,15 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func getCurrentCard() -> IdeaCardView? {
+        if (self.ideaDeck.count > 0){
+            return self.ideaDeck[self.ideaDeck.count-1]
+        }
+        else{
+            return nil
+        }
     }
     
     func getIdeaDeck() {
@@ -74,6 +103,7 @@ class HomeController: UIViewController {
                             }
                             self.cardDeckView.addSubview(cardView)
                             cardView.fillSuperview()
+                            self.ideaDeck.append(cardView)
                         }
                     })
                 } catch let jsonErr {

@@ -23,7 +23,6 @@ class IdeaCardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
-        
     }
     
     required init?(coder aDecoder: NSCoder){
@@ -60,6 +59,37 @@ class IdeaCardView: UIView {
         //swipe gesture
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan))
         addGestureRecognizer(panGesture)
+    }
+    
+    func swipeRight(){
+        let x = self.superview!.frame.width/2
+        let degrees = x / 20
+        let angle = degrees * .pi / 180
+        let rotationalTransform = CGAffineTransform(rotationAngle: angle)
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            self.transform = rotationalTransform.translatedBy(x: x, y: 0)
+            self.layer.opacity = 0
+            self.swipeOverlay.backgroundColor = .green
+            self.swipeOverlay.layer.opacity = 1.0
+            
+        }, completion:{ (bool) in
+            self.removeFromSuperview()
+        })
+    }
+    
+    func swipeLeft(){
+        let x = -self.superview!.frame.width/2
+        let degrees = x / 20
+        let angle = degrees * .pi / 180
+        let rotationalTransform = CGAffineTransform(rotationAngle: angle)
+        UIView.animate(withDuration: 1.0, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
+            self.transform = rotationalTransform.translatedBy(x: x, y: 0)
+            self.layer.opacity = 0
+            self.swipeOverlay.backgroundColor = .red
+            self.swipeOverlay.layer.opacity = 1.0
+        }, completion:{ (bool) in
+            self.removeFromSuperview()
+        })
     }
     
     @objc fileprivate func handlePan(gesture: UIPanGestureRecognizer){
