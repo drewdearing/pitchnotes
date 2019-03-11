@@ -55,6 +55,7 @@ class HomeController: UIViewController {
     
     var cardDeck = Array<CardView>()
     var ideasCurrentDeck = true
+    var currentTask:URLSessionDataTask?
     @IBOutlet weak var switchButton: UIButton!
     
     @IBOutlet weak var cardDeckView: UIView!
@@ -63,10 +64,12 @@ class HomeController: UIViewController {
         if(ideasCurrentDeck){
             getProfileDeck()
             switchButton.setImage(#imageLiteral(resourceName: "candidates_top"), for: .normal)
+            ideasCurrentDeck = false
         }
         else{
             getIdeaDeck()
             switchButton.setImage(#imageLiteral(resourceName: "idea_top"), for: .normal)
+            ideasCurrentDeck = true
         }
     }
     
@@ -87,11 +90,19 @@ class HomeController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getIdeaDeck()
+        if(ideasCurrentDeck){
+            getIdeaDeck()
+            switchButton.setImage(#imageLiteral(resourceName: "idea_top"), for: .normal)
+        }
+        else{
+            getProfileDeck()
+            switchButton.setImage(#imageLiteral(resourceName: "candidates_top"), for: .normal)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     func getCurrentCard() -> CardView? {
@@ -110,9 +121,18 @@ class HomeController: UIViewController {
         cardDeck = Array<CardView>()
     }
     
+    func setCurrentTask(task: URLSessionDataTask){
+        if let current = currentTask {
+            current.cancel()
+            currentTask = nil
+            clearDeck()
+        }
+        currentTask = task
+        currentTask?.resume()
+    }
+    
     func getIdeaDeck() {
         clearDeck()
-        ideasCurrentDeck = true
         let currentUser = Auth.auth().currentUser
         currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
             if error != nil {
@@ -127,7 +147,7 @@ class HomeController: UIViewController {
             request.httpMethod = "GET"
             request.addValue("Bearer "+idToken!, forHTTPHeaderField: "Authorization")
             
-            URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
+            let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
                 guard let data = data else { return }
                 do {
                     print(String(data: data, encoding: String.Encoding.utf8))
@@ -152,16 +172,17 @@ class HomeController: UIViewController {
                             self.cardDeck.append(cardView)
                         }
                     })
+                    
                 } catch let jsonErr {
                     print("Error: \(jsonErr)")
                 }
-                }.resume()
+            }
+            self.setCurrentTask(task:task)
         }
     }
     
     func getProfileDeck(){
         clearDeck()
-        ideasCurrentDeck = false
         let currentUser = Auth.auth().currentUser
         currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
             if error != nil {
@@ -176,7 +197,7 @@ class HomeController: UIViewController {
             request.httpMethod = "GET"
             request.addValue("Bearer "+idToken!, forHTTPHeaderField: "Authorization")
             
-            URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
+            let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
                 guard let data = data else { return }
                 do {
                     print(String(data: data, encoding: String.Encoding.utf8))
@@ -204,7 +225,8 @@ class HomeController: UIViewController {
                 } catch let jsonErr {
                     print("Error: \(jsonErr)")
                 }
-                }.resume()
+            }
+            self.setCurrentTask(task:task)
         }
     }
 
