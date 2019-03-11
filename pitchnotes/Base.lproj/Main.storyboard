@@ -107,7 +107,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="127.33333333333333" height="80"/>
                                                 <state key="normal" image="top_left_ham"/>
                                                 <connections>
-                                                    <segue destination="4WE-hc-Xpw" kind="show" id="kqT-UJ-1kb"/>
+                                                    <segue destination="4WE-hc-Xpw" kind="popoverPresentation" popoverAnchorView="RZ5-LV-25T" id="kqT-UJ-1kb">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8D-lQ-vrV">
