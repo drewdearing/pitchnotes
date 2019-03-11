@@ -11,12 +11,22 @@ import UIKit
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    var ideaID = "4fzdvhIlhqAMq8GYTvtu"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let members = Members(ideaID: ideaID)
+        members.getMembers { (membersInGroup, error) in
+            if let error = error{
+                print("There is an error while fetching members data: \(error)")
+                return
+            }
+            print("I am going to reload the table view")
+        }
     }
 
     
