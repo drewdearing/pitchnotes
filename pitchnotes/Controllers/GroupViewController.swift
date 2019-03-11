@@ -28,8 +28,8 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
         
-        tableViewData = [cellData(opened: false, title: "Ideas Created By You", image: "idea-by-you", sectionData: ["cell1", "cell2"]),
-                         cellData(opened: false, title: "Ideas You Joined", image: "idea-by-others", sectionData: ["cell1", "cell2"])]
+        tableViewData = [cellData(opened: true, title: "Ideas Created By You", image: "idea-by-you", sectionData: ["cell1", "cell2"]),
+                         cellData(opened: true, title: "Ideas You Joined", image: "idea-by-others", sectionData: ["cell1", "cell2"])]
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -77,7 +77,8 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 tableView.reloadSections(sections, with: .none)
             }
         }else{
-            //segue
+            tableView.deselectRow(at: indexPath, animated: true)
+            performSegue(withIdentifier: "toChatView", sender: self)
         }
         
     }
