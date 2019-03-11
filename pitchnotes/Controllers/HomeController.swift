@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import SVProgressHUD
 
 struct IdeaDeck: Codable {
     var deck: [Idea]
@@ -127,9 +128,11 @@ class HomeController: UIViewController {
             current.cancel()
             currentTask = nil
             clearDeck()
+            SVProgressHUD.dismiss()
         }
         currentTask = task
         currentTask?.resume()
+        SVProgressHUD.show(withStatus: "Loading...")
     }
     
     func getIdeaDeck() {
@@ -149,6 +152,7 @@ class HomeController: UIViewController {
             request.addValue("Bearer "+idToken!, forHTTPHeaderField: "Authorization")
             
             let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
+                SVProgressHUD.dismiss()
                 guard let data = data else { return }
                 do {
                     print(String(data: data, encoding: String.Encoding.utf8))
@@ -199,6 +203,7 @@ class HomeController: UIViewController {
             request.addValue("Bearer "+idToken!, forHTTPHeaderField: "Authorization")
             
             let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
+                SVProgressHUD.dismiss()
                 guard let data = data else { return }
                 do {
                     print(String(data: data, encoding: String.Encoding.utf8))
