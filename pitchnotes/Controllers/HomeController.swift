@@ -16,38 +16,57 @@ struct IdeaDeck: Codable {
     }
 }
 
+struct CandidateDeck: Codable {
+    var deck: [Candidate]
+    init(){
+        self.deck = Array<Candidate>()
+    }
+}
+
 struct Idea: Codable {
     var id: String
     var name: String
     var category: String
     var description: String
-    var owner: Owner
+    var owner: IdeaOwner
 }
 
-struct Profile: Codable {
-    var id: String
-    var name: String
-}
-
-struct Owner: Codable {
+struct Candidate: Codable {
     var id: String
     var name: String
     var photoURL: String
+    var skills: [String]
+    var bio: String
+    var idea: CandidateIdea
+}
+
+struct IdeaOwner: Codable {
+    var id: String
+    var name: String
+    var photoURL: String
+}
+
+struct CandidateIdea: Codable {
+    var id: String
+    var name: String
 }
 
 class HomeController: UIViewController {
     
     var cardDeck = Array<CardView>()
     var ideasCurrentDeck = true
+    @IBOutlet weak var switchButton: UIButton!
     
     @IBOutlet weak var cardDeckView: UIView!
     
     @IBAction func switchDecks(_ sender: Any) {
         if(ideasCurrentDeck){
             getProfileDeck()
+            switchButton.setImage(#imageLiteral(resourceName: "candidates_top"), for: .normal)
         }
         else{
             getIdeaDeck()
+            switchButton.setImage(#imageLiteral(resourceName: "idea_top"), for: .normal)
         }
     }
     
@@ -143,12 +162,50 @@ class HomeController: UIViewController {
     func getProfileDeck(){
         clearDeck()
         ideasCurrentDeck = false
-        let cardView = ProfileCardView()
-        cardView.ideaUid = "ideaID"
-        cardView.userUid = "person'sID"
-        self.cardDeckView.addSubview(cardView)
-        cardView.fillSuperview()
-        self.cardDeck.append(cardView)
+        let currentUser = Auth.auth().currentUser
+        currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+            if error != nil {
+                // Handle error
+                return;
+            }
+            
+            print("Bearer "+idToken!)
+            let urlPathBase = "https://us-central1-pitchnote-f1fd4.cloudfunctions.net/candidatesDeck/"
+            let request = NSMutableURLRequest()
+            request.url = URL(string: urlPathBase)
+            request.httpMethod = "GET"
+            request.addValue("Bearer "+idToken!, forHTTPHeaderField: "Authorization")
+            
+            URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
+                guard let data = data else { return }
+                do {
+                    print(String(data: data, encoding: String.Encoding.utf8))
+                    let candidatesDeck = try JSONDecoder().decode(CandidateDeck.self, from: data)
+                    candidatesDeck.deck.forEach({ (candidate) in
+                        DispatchQueue.main.async {
+                            let cardView = ProfileCardView()
+                            cardView.ideaUid = candidate.idea.id
+                            cardView.userUid = candidate.id
+                            cardView.cardUserName.text = candidate.name
+                            cardView.cardIdeaName.text = candidate.idea.name
+                            cardView.cardUserBio.text = candidate.bio
+                            cardView.cardClassYear.text = "class of...."
+                            let url = URL(string: candidate.photoURL)
+                            let data = try? Data(contentsOf: url!)
+                            if let imageData = data {
+                                cardView.cardProfilePic.image = UIImage(data:imageData)
+                                cardView.cardIdeaPic.image = UIImage(data:imageData)
+                            }
+                            self.cardDeckView.addSubview(cardView)
+                            cardView.fillSuperview()
+                            self.cardDeck.append(cardView)
+                        }
+                    })
+                } catch let jsonErr {
+                    print("Error: \(jsonErr)")
+                }
+                }.resume()
+        }
     }
 
 }
