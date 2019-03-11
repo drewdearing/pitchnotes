@@ -172,6 +172,7 @@
                     </view>
                     <connections>
                         <outlet property="cardDeckView" destination="twZ-5t-Qpv" id="hfw-Fi-t3m"/>
+                        <outlet property="switchButton" destination="D8D-lQ-vrV" id="dN9-S7-qDy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avk-cM-o4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,11 +182,11 @@
     </scenes>
     <resources>
         <image name="dismiss_circle" width="80" height="80"/>
-        <image name="idea_top" width="157" height="100"/>
+        <image name="idea_top" width="78" height="50"/>
         <image name="like_circle" width="80" height="80"/>
         <image name="login_logo" width="790" height="593"/>
         <image name="super_like_circle" width="64" height="64"/>
         <image name="top_left_ham" width="23" height="16"/>
-        <image name="top_right_pin" width="30.5" height="30.5"/>
+        <image name="top_right_pin" width="30" height="30"/>
     </resources>
 </document>
