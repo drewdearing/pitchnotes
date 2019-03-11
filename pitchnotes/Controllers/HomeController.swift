@@ -35,6 +35,7 @@ struct Candidate: Codable {
     var id: String
     var name: String
     var photoURL: String
+    var graduate: Int
     var skills: [String]
     var bio: String
     var idea: CandidateIdea
@@ -210,7 +211,7 @@ class HomeController: UIViewController {
                             cardView.cardUserName.text = candidate.name
                             cardView.cardIdeaName.text = candidate.idea.name
                             cardView.cardUserBio.text = candidate.bio
-                            cardView.cardClassYear.text = "class of...."
+                            cardView.cardClassYear.text = "Class of "+String(candidate.graduate)
                             let url = URL(string: candidate.photoURL)
                             let data = try? Data(contentsOf: url!)
                             if let imageData = data {
