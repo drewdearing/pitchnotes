@@ -25,8 +25,23 @@ class PersonCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        
     }
-
+    
+    func setName(name: String){
+        self.nameLabel.text = name
+    }
+    func setbio(bio: String){
+        self.bioLabel.text = bio
+    }
+    func setPersonImage(photoURL: URL){
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: photoURL) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.personImage.image = image
+                    }
+                }
+            }
+        }
+    }
 }

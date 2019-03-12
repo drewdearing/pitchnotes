@@ -12,7 +12,7 @@ struct cellData {
     var opened = Bool()
     var title = String()
     var image = String()
-    var sectionData = [String]()
+    var sectionData = [MatchedIdeas]()
 }
 
 class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -28,8 +28,21 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.register(UINib(nibName: "GroupCell", bundle: nil), forCellReuseIdentifier: "GroupCell")
         
-        tableViewData = [cellData(opened: true, title: "Ideas Created By You", image: "idea-by-you", sectionData: ["cell1", "cell2"]),
-                         cellData(opened: true, title: "Ideas You Joined", image: "idea-by-others", sectionData: ["cell1", "cell2"])]
+        tableViewData = [cellData(opened: true, title: "Ideas Created By You", image: "idea-by-you", sectionData: []),
+                         cellData(opened: true, title: "Ideas You Joined", image: "idea-by-others", sectionData: [])]
+        
+        let groups = Groups()
+        groups.getGroups { (matchedGroups, error) in
+            if let error = error{
+                print("There is an error while fetching groups data: \(error)")
+                return
+            }
+            self.tableViewData[0].sectionData = matchedGroups.created
+            self.tableViewData[1].sectionData = matchedGroups.joined
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,14 +59,17 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dataIndex = indexPath.row - 1
+        let section = indexPath.section
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "SectionCell", for: indexPath) as! SectionCell
-            cell.setTitle(title: tableViewData[indexPath.section].title)
-            cell.setImage(imageName: tableViewData[indexPath.section].image)
+            cell.setTitle(title: tableViewData[section].title)
+            cell.setImage(imageName: tableViewData[section].image)
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupCell
             //cell.textLabel?.text = tableViewData[indexPath.section].sectionData[dataIndex]
+            cell.setAppName(name: tableViewData[section].sectionData[dataIndex].name)
+            cell.setNumberOfMembers(count: tableViewData[section].sectionData[dataIndex].memberCount)
             return cell
         }
     }
@@ -77,12 +93,21 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 tableView.reloadSections(sections, with: .none)
             }
         }else{
+            self.performSegue(withIdentifier: "toChatView", sender: nil)
             tableView.deselectRow(at: indexPath, animated: true)
-            performSegue(withIdentifier: "toChatView", sender: self)
         }
         
     }
     @IBAction func backButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destination = segue.destination as! ChatViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destination.ideaID = String(tableViewData[indexPath.section].sectionData[indexPath.row-1].id)
+        }
+        
     }
 }

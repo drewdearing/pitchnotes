@@ -1,44 +1,42 @@
 //
-//  File.swift
+//  Groups.swift
 //  pitchnotes
 //
 //  Created by Xi Jin on 3/11/19.
 //  Copyright © 2019 Drew Dearing. All rights reserved.
 //
-import Foundation
-import FirebaseAuth
 
-struct MembersInGroup: Codable {
-    let members: [SingleMember]
+import Foundation
+import Firebase
+
+struct MatchedGroups: Codable{
+    let created: [MatchedIdeas]
+    let joined: [MatchedIdeas]
 }
 
-struct SingleMember: Codable {
+struct MatchedIdeas: Codable {
     let id: String
     let name: String
-    let bio: String
-    let photoURL: String
+    let memberCount: Int
 }
 
-class Members{
+class Groups{
     var baseAPI: String
-    var ideaID: String
     
-    init(ideaID: String) {
-        self.baseAPI = BaseAPI.getBase() + "members/"
-        self.ideaID = ideaID
+    init() {
+        self.baseAPI = BaseAPI.getBase() + "groups/"
     }
     
-    func getMembers(completion: @escaping (MembersInGroup, Error?) -> Void){
-        
+    func getGroups(completion: @escaping (MatchedGroups, Error?) -> Void){
         let currentUser = Auth.auth().currentUser
-        currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
-            if let error = error {
+        currentUser?.getIDTokenForcingRefresh(true, completion: { (idToken, error) in
+            if let error = error{
                 print("error getting idToken\(error)")
-                completion(MembersInGroup(members: []), error)
+                completion(MatchedGroups(created: [], joined: []), error)
                 return;
             }
             guard let idToken = idToken else {return}
-            let urlPathBase = self.baseAPI + self.ideaID
+            let urlPathBase = self.baseAPI
             let request = NSMutableURLRequest()
             request.url = URL(string: urlPathBase)
             request.httpMethod = "GET"
@@ -47,12 +45,13 @@ class Members{
             URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
                 guard let data = data else { return }
                 do {
-                    let membersInGroup = try JSONDecoder().decode(MembersInGroup.self, from: data)
-                    completion(membersInGroup, nil)
+                    let matchedGroups = try JSONDecoder().decode(MatchedGroups.self, from: data)
+                    completion(matchedGroups, nil)
                 } catch let jsonErr {
                     print("Error: \(jsonErr)")
                 }
             }.resume()
-        }
+        })
     }
+    
 }

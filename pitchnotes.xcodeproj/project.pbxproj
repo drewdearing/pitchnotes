@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37530F1B2236BED1004DB7DB /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F1A2236BED1004DB7DB /* Members.swift */; };
 		37530F1D2236BF56004DB7DB /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F1C2236BF56004DB7DB /* BaseAPI.swift */; };
+		37530F21223722FC004DB7DB /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F20223722FB004DB7DB /* Groups.swift */; };
 		376AD8D9223628BF002F0CCA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376AD8D8223628BF002F0CCA /* ChatViewController.swift */; };
 		376AD8DB22362DC8002F0CCA /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376AD8DA22362DC8002F0CCA /* PersonCell.swift */; };
 		37BD48272233034700BC06D3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 37BD48262233034600BC06D3 /* GoogleService-Info.plist */; };
@@ -58,6 +59,7 @@
 		001697E354611BDA15B7B67B /* Pods-pitchnotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pitchnotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pitchnotesUITests/Pods-pitchnotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		37530F1A2236BED1004DB7DB /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		37530F1C2236BF56004DB7DB /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		37530F20223722FB004DB7DB /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		376AD8D8223628BF002F0CCA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		376AD8DA22362DC8002F0CCA /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		37BD48262233034600BC06D3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				37530F1A2236BED1004DB7DB /* Members.swift */,
+				37530F20223722FB004DB7DB /* Groups.swift */,
 				37530F1C2236BF56004DB7DB /* BaseAPI.swift */,
 			);
 			path = Models;
@@ -489,6 +492,7 @@
 				3B2B08942234F74F000BB2A4 /* ProfileCardView.swift in Sources */,
 				376AD8DB22362DC8002F0CCA /* PersonCell.swift in Sources */,
 				3B45EA192215C7A60007D747 /* HomeController.swift in Sources */,
+				37530F21223722FC004DB7DB /* Groups.swift in Sources */,
 				37BD485A2235EDBA00BC06D3 /* GroupCell.swift in Sources */,
 				3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */,
 				37530F1B2236BED1004DB7DB /* Members.swift in Sources */,

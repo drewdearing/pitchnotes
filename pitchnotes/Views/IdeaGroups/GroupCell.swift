@@ -25,4 +25,11 @@ class GroupCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setAppName(name: String){
+        self.appName.text = name
+    }
+    func setNumberOfMembers(count: Int){
+        self.numberOfMembers.text = String(count)
+    }
+    
 }
