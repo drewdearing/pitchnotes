@@ -201,6 +201,7 @@ class ProfileSetupViewController: UIViewController {
                         print ("got data: \(dataString)")
                     }
                     self.statusLabel.text = "Done!"
+                    UserDefaults.standard.set(try? PropertyListEncoder().encode(requiredFields), forKey: "profile")
                     self.performSegue(withIdentifier: "ProfileSetupSegue", sender: self)
                 }
                 task.resume()
