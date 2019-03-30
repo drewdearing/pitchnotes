@@ -41,6 +41,7 @@
 		3B47262E224FFD1500A11A41 /* ProfileSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */; };
 		3B519BF222345AF30039BAFC /* IdeaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B519BF122345AF30039BAFC /* IdeaCard.xib */; };
 		3B519BF422345B060039BAFC /* IdeaCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B519BF322345B060039BAFC /* IdeaCardView.swift */; };
+		3B87F03322501A0A002E7692 /* PinList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B87F03222501A0A002E7692 /* PinList.storyboard */; };
 		3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE37BEB2231A63E0091A7BA /* Extensions+UIView.swift */; };
 		4C467D1785ABCDB55A8FFDCB /* Pods_pitchnotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F5F5989EC4B219E2095B47E /* Pods_pitchnotesTests.framework */; };
 		BD50D4E2444BCE76546579A4 /* Pods_pitchnotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62E8C4161454737C2D0DDACA /* Pods_pitchnotes.framework */; };
@@ -106,6 +107,7 @@
 		3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupViewController.swift; sourceTree = "<group>"; };
 		3B519BF122345AF30039BAFC /* IdeaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdeaCard.xib; sourceTree = "<group>"; };
 		3B519BF322345B060039BAFC /* IdeaCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaCardView.swift; sourceTree = "<group>"; };
+		3B87F03222501A0A002E7692 /* PinList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PinList.storyboard; sourceTree = "<group>"; };
 		3BE37BEB2231A63E0091A7BA /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
 		47F5E782D83772CB749A5583 /* Pods-pitchnotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pitchnotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pitchnotes/Pods-pitchnotes.debug.xcconfig"; sourceTree = "<group>"; };
 		484AB090A6017DA4839AD901 /* Pods_pitchnotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_pitchnotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -212,6 +214,7 @@
 				37EBB3E7224E9C850074CF3A /* AppSettings.swift */,
 				3B45EA1A2215C7A60007D747 /* Main.storyboard */,
 				37BD484F2235AB0A00BC06D3 /* MatchedGroups.storyboard */,
+				3B87F03222501A0A002E7692 /* PinList.storyboard */,
 				3B45EA1D2215C7A70007D747 /* Assets.xcassets */,
 				3B45EA1F2215C7A70007D747 /* LaunchScreen.storyboard */,
 				3B45EA222215C7A70007D747 /* Info.plist */,
@@ -402,6 +405,7 @@
 				37BD485B2235EDBA00BC06D3 /* GroupCell.xib in Resources */,
 				37BD48272233034700BC06D3 /* GoogleService-Info.plist in Resources */,
 				3B519BF222345AF30039BAFC /* IdeaCard.xib in Resources */,
+				3B87F03322501A0A002E7692 /* PinList.storyboard in Resources */,
 				37BD48502235AB0A00BC06D3 /* MatchedGroups.storyboard in Resources */,
 				3B45EA1E2215C7A70007D747 /* Assets.xcassets in Resources */,
 				3B45EA1C2215C7A60007D747 /* Main.storyboard in Resources */,

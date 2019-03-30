@@ -413,6 +413,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S6k-9n-sXv">
                                                 <rect key="frame" x="254.66666666666671" y="0.0" width="127.33333333333334" height="80"/>
                                                 <state key="normal" image="top_right_pin"/>
+                                                <connections>
+                                                    <segue destination="jLE-lZ-dQl" kind="popoverPresentation" popoverAnchorView="S6k-9n-sXv" id="YFX-gO-ASz">
+                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                    </segue>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -470,6 +475,14 @@
             </objects>
             <point key="canvasLocation" x="1400.625" y="26.25"/>
         </scene>
+        <!--PinList-->
+        <scene sceneID="TSa-4u-6Fb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PinList" id="jLE-lZ-dQl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TwX-f4-RuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2207" y="-223"/>
+        </scene>
         <!--MatchedGroups-->
         <scene sceneID="3la-lZ-UQf">
             <objects>
@@ -489,6 +502,6 @@
         <image name="top_right_pin" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xMe-eJ-eUy"/>
+        <segue reference="tuP-CP-Uce"/>
     </inferredMetricsTieBreakers>
 </document>
