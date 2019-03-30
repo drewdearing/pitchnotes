@@ -104,6 +104,7 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.7.0)
+  - SideMenuSwift (1.0.2)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -111,6 +112,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - MessageKit
+  - SideMenuSwift
   - SVProgressHUD
 
 SPEC REPOS:
@@ -135,6 +137,7 @@ SPEC REPOS:
     - MessageKit
     - nanopb
     - Protobuf
+    - SideMenuSwift
     - SVProgressHUD
 
 SPEC CHECKSUMS:
@@ -158,8 +161,9 @@ SPEC CHECKSUMS:
   MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
+  SideMenuSwift: 435ede4955a813fc4fd6c822c067784626621448
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 1530aed761da34570f65a29e724b584d3a52134d
+PODFILE CHECKSUM: 86702756c90a236afb0329a1c9090c37863d974e
 
 COCOAPODS: 1.6.1

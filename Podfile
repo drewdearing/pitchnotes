@@ -11,6 +11,7 @@ target 'pitchnotes' do
   pod 'Firebase/Firestore'
   pod 'SVProgressHUD'
   pod 'MessageKit'
+  pod 'SideMenuSwift'
 
   target 'pitchnotesTests' do
     inherit! :search_paths

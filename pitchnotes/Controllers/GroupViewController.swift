@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import SideMenuSwift
 
 struct cellData {
     var opened = Bool()
@@ -107,9 +108,6 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
     }
-    @IBAction func backButtonPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //
@@ -120,5 +118,8 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //        }
 //
 //    }
+    @IBAction func sideBarPressed(_ sender: Any) {
+        sideMenuController?.revealMenu()
+    }
     
 }
