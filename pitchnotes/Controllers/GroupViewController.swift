@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 struct cellData {
     var opened = Bool()
@@ -22,6 +23,7 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "SectionCell", bundle: nil), forCellReuseIdentifier: "SectionCell")
@@ -93,7 +95,14 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 tableView.reloadSections(sections, with: .none)
             }
         }else{
-            self.performSegue(withIdentifier: "toChatView", sender: nil)
+            
+            if let user = Auth.auth().currentUser {
+                let data = tableViewData[indexPath.section].sectionData[indexPath.row-1]
+                let vc = ChatViewController(user: user, title: String(data.name), channelId: data.id)
+                navigationController?.pushViewController(vc, animated: true)
+            }else{
+                print("You are not logged in")
+            }
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
@@ -102,12 +111,14 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        let destination = segue.destination as! ChatViewController
-        if let indexPath = tableView.indexPathForSelectedRow {
-            destination.ideaID = String(tableViewData[indexPath.section].sectionData[indexPath.row-1].id)
-        }
-        
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        let destination = segue.destination as! ChatViewController
+//        if let indexPath = tableView.indexPathForSelectedRow {
+//            //destination.ideaID = String(tableViewData[indexPath.section].sectionData[indexPath.row-1].id)
+//            destination.title = String(tableViewData[indexPath.section].sectionData[indexPath.row-1].name)
+//        }
+//
+//    }
+    
 }

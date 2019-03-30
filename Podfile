@@ -8,7 +8,9 @@ target 'pitchnotes' do
   # Pods for pitchnotes
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   pod 'SVProgressHUD'
+  pod 'MessageKit'
 
   target 'pitchnotesTests' do
     inherit! :search_paths

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YbO-fp-vnX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Z2-kK-ACg">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Group View Controller-->
+        <!--Pitches-->
         <scene sceneID="m99-Lh-hGs">
             <objects>
                 <viewController id="YbO-fp-vnX" customClass="GroupViewController" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,58 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nn7-xo-Tkk">
-                                <rect key="frame" x="8" y="44" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="K0H-yo-S1f"/>
-                                    <constraint firstAttribute="width" constant="80" id="WGH-AT-qu0"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="back"/>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="YbO-fp-vnX" eventType="touchUpInside" id="ln6-a4-T6e"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="matched-groups" translatesAutoresizingMaskIntoConstraints="NO" id="Vl7-o1-2am">
-                                <rect key="frame" x="147.66666666666666" y="44" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="ZEd-Qp-q41"/>
-                                    <constraint firstAttribute="height" constant="80" id="yUD-14-XXe"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WTE-Jp-a1j">
-                                <rect key="frame" x="0.0" y="124" width="375" height="688"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="WTE-Jp-a1j" secondAttribute="bottom" id="5Kd-q7-sah"/>
-                            <constraint firstItem="Vl7-o1-2am" firstAttribute="top" secondItem="5Qa-uk-sKt" secondAttribute="top" id="5da-A3-vRI"/>
+                            <constraint firstItem="WTE-Jp-a1j" firstAttribute="top" secondItem="5Qa-uk-sKt" secondAttribute="top" id="71Y-PX-rVT"/>
                             <constraint firstItem="WTE-Jp-a1j" firstAttribute="leading" secondItem="5Qa-uk-sKt" secondAttribute="leading" id="SUr-iP-GKi"/>
-                            <constraint firstItem="nn7-xo-Tkk" firstAttribute="top" secondItem="5Qa-uk-sKt" secondAttribute="top" id="f4h-i4-NFt"/>
-                            <constraint firstItem="Vl7-o1-2am" firstAttribute="centerX" secondItem="MzG-Cg-673" secondAttribute="centerX" id="j2m-j6-tnJ"/>
-                            <constraint firstItem="WTE-Jp-a1j" firstAttribute="top" secondItem="nn7-xo-Tkk" secondAttribute="bottom" id="pKZ-dn-zz0"/>
                             <constraint firstItem="WTE-Jp-a1j" firstAttribute="trailing" secondItem="5Qa-uk-sKt" secondAttribute="trailing" id="sW7-bq-KcM"/>
-                            <constraint firstItem="nn7-xo-Tkk" firstAttribute="leading" secondItem="5Qa-uk-sKt" secondAttribute="leading" constant="8" id="v1P-rc-zvb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5Qa-uk-sKt"/>
                     </view>
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" title="Pitches" id="oZa-k7-Iba"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="WTE-Jp-a1j" id="yeu-cv-ypP"/>
-                        <segue destination="vct-KV-EcO" kind="presentation" identifier="toChatView" modalTransitionStyle="flipHorizontal" id="LYd-fb-O8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFq-tr-1ce" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79" y="81"/>
+            <point key="canvasLocation" x="508" y="80.541871921182263"/>
         </scene>
         <!--Chat View Controller-->
+        <scene sceneID="rfT-iN-GFq">
+            <objects>
+                <viewController id="nYM-7h-hWz" customClass="ChatViewController" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ila-uQ-9oe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gZh-CS-Joc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RHS-6P-QiK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1418.4000000000001" y="78.325123152709367"/>
+        </scene>
+        <!--Chat View Controller2-->
         <scene sceneID="cjV-qP-0f7">
             <objects>
-                <viewController id="vct-KV-EcO" customClass="ChatViewController" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vct-KV-EcO" customClass="ChatViewController2" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oMR-CH-j5K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,12 +154,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g1g-F8-QZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792.79999999999995" y="80.541871921182263"/>
+            <point key="canvasLocation" x="2327.1999999999998" y="80.541871921182263"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zfR-Zx-8eN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Z2-kK-ACg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fxe-vE-I9E">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YbO-fp-vnX" kind="relationship" relationship="rootViewController" id="5Xv-bw-fXO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEp-8g-BJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-434.39999999999998" y="80.541871921182263"/>
         </scene>
     </scenes>
     <resources>
         <image name="40279285_10216911105591153_8570435745418838016_n (1)" width="440" height="685"/>
         <image name="back" width="30.5" height="30.5"/>
-        <image name="matched-groups" width="96" height="96"/>
     </resources>
 </document>

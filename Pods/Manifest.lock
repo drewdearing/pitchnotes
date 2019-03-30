@@ -1,4 +1,10 @@
 PODS:
+  - BoringSSL-GRPC (0.0.3):
+    - BoringSSL-GRPC/Implementation (= 0.0.3)
+    - BoringSSL-GRPC/Interface (= 0.0.3)
+  - BoringSSL-GRPC/Implementation (0.0.3):
+    - BoringSSL-GRPC/Interface (= 0.0.3)
+  - BoringSSL-GRPC/Interface (0.0.3)
   - Firebase/Auth (5.5.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.3)
@@ -7,6 +13,9 @@ PODS:
     - FirebaseAnalytics (= 5.1.0)
   - Firebase/CoreOnly (5.5.0):
     - FirebaseCore (= 5.1.0)
+  - Firebase/Firestore (5.5.0):
+    - Firebase/CoreOnly
+    - FirebaseFirestore (= 0.13.0)
   - FirebaseAnalytics (5.1.0):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -24,6 +33,21 @@ PODS:
   - FirebaseAuthInterop (1.0.0)
   - FirebaseCore (5.1.0):
     - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseFirestore (0.13.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.0)
+    - FirebaseFirestore/abseil-cpp (= 0.13.0)
+    - gRPC-ProtoRPC (~> 1.0)
+    - leveldb-library (~> 1.18)
+    - nanopb (~> 0.3.8)
+    - Protobuf (~> 3.1)
+  - FirebaseFirestore/abseil-cpp (0.13.0):
+    - FirebaseAuthInterop (~> 1.0)
+    - FirebaseCore (~> 5.0)
+    - gRPC-ProtoRPC (~> 1.0)
+    - leveldb-library (~> 1.18)
+    - nanopb (~> 0.3.8)
+    - Protobuf (~> 3.1)
   - FirebaseInstanceID (3.2.0):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
@@ -48,46 +72,94 @@ PODS:
   - "GoogleUtilities/NSData+zlib (5.2.1)"
   - GoogleUtilities/Reachability (5.2.1):
     - GoogleUtilities/Logger
+  - gRPC (1.19.0):
+    - gRPC-RxLibrary (= 1.19.0)
+    - gRPC/Main (= 1.19.0)
+  - gRPC-Core (1.19.0):
+    - gRPC-Core/Implementation (= 1.19.0)
+    - gRPC-Core/Interface (= 1.19.0)
+  - gRPC-Core/Implementation (1.19.0):
+    - BoringSSL-GRPC (= 0.0.3)
+    - gRPC-Core/Interface (= 1.19.0)
+    - nanopb (~> 0.3)
+  - gRPC-Core/Interface (1.19.0)
+  - gRPC-ProtoRPC (1.19.0):
+    - gRPC-ProtoRPC/Main (= 1.19.0)
+  - gRPC-ProtoRPC/Main (1.19.0):
+    - gRPC (= 1.19.0)
+    - gRPC-RxLibrary (= 1.19.0)
+    - Protobuf (~> 3.0)
+  - gRPC-RxLibrary (1.19.0)
+  - gRPC/Main (1.19.0):
+    - gRPC-Core (= 1.19.0)
+    - gRPC-RxLibrary (= 1.19.0)
   - GTMSessionFetcher/Core (1.2.0)
+  - leveldb-library (1.20)
+  - MessageInputBar/Core (0.4.1)
+  - MessageKit (2.0.0):
+    - MessageInputBar/Core
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - Protobuf (3.7.0)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Firestore
+  - MessageKit
   - SVProgressHUD
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - BoringSSL-GRPC
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
     - FirebaseAuthInterop
     - FirebaseCore
+    - FirebaseFirestore
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
+    - gRPC
+    - gRPC-Core
+    - gRPC-ProtoRPC
+    - gRPC-RxLibrary
     - GTMSessionFetcher
+    - leveldb-library
+    - MessageInputBar
+    - MessageKit
     - nanopb
+    - Protobuf
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   Firebase: 8c957f9cb3852b519180fb378801b7eeeba4d288
   FirebaseAnalytics: d4a260c114aec0d765ab5b9c404ac63de1d29381
   FirebaseAuth: 657a25e4be044d2d333663ebf515a861c5a59cd7
   FirebaseAuthInterop: 0ffa57668be100582bb7643d4fcb7615496c41fc
   FirebaseCore: ee4b35cf8c8e781da296cc7c15125e4608bb954d
+  FirebaseFirestore: 0a6e4b9256ae39ed41258aa46213975c93908a74
   FirebaseInstanceID: 8cd2c6cfe7b9ab65ce7e248f6da7f26f6775b9be
   GoogleAppMeasurement: e785bdb86d3d280abc778156cec323a975f11d1d
   GoogleUtilities: 8d9fa00248c475b606fd20b562242060a20117a2
+  gRPC: 77d2866b3ce1e187b2239d8adba48b98d9524c15
+  gRPC-Core: bd9472c8daa2e414b9f8038ba667bf56ce0e02b8
+  gRPC-ProtoRPC: cc498c1885e75a1fb6b892881b440707f131fb5e
+  gRPC-RxLibrary: 562e2a6d12137d15dfb93bbf652bd3f638e3eb8a
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageInputBar: e81c7535347f1f7b923de7080409a535a004b6e4
+  MessageKit: 29c1c87e5a396d2ca7a3f712e5171dc9aba42a1e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0382129acc9fe10335c35d4e6acac2efc82db448
+PODFILE CHECKSUM: 1530aed761da34570f65a29e724b584d3a52134d
 
 COCOAPODS: 1.6.1
