@@ -37,6 +37,8 @@
 		3B45EA212215C7A70007D747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B45EA1F2215C7A70007D747 /* LaunchScreen.storyboard */; };
 		3B45EA2C2215C7A70007D747 /* pitchnotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA2B2215C7A70007D747 /* pitchnotesTests.swift */; };
 		3B45EA372215C7A70007D747 /* pitchnotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45EA362215C7A70007D747 /* pitchnotesUITests.swift */; };
+		3B47262C224FFD0500A11A41 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47262B224FFD0500A11A41 /* RegisterViewController.swift */; };
+		3B47262E224FFD1500A11A41 /* ProfileSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */; };
 		3B519BF222345AF30039BAFC /* IdeaCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B519BF122345AF30039BAFC /* IdeaCard.xib */; };
 		3B519BF422345B060039BAFC /* IdeaCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B519BF322345B060039BAFC /* IdeaCardView.swift */; };
 		3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE37BEB2231A63E0091A7BA /* Extensions+UIView.swift */; };
@@ -100,6 +102,8 @@
 		3B45EA322215C7A70007D747 /* pitchnotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pitchnotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B45EA362215C7A70007D747 /* pitchnotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pitchnotesUITests.swift; sourceTree = "<group>"; };
 		3B45EA382215C7A70007D747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B47262B224FFD0500A11A41 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSetupViewController.swift; sourceTree = "<group>"; };
 		3B519BF122345AF30039BAFC /* IdeaCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IdeaCard.xib; sourceTree = "<group>"; };
 		3B519BF322345B060039BAFC /* IdeaCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaCardView.swift; sourceTree = "<group>"; };
 		3BE37BEB2231A63E0091A7BA /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
@@ -239,9 +243,11 @@
 			children = (
 				3B45EA182215C7A60007D747 /* HomeController.swift */,
 				3B2471A92232F7B5001E7D07 /* LoginController.swift */,
+				3B47262B224FFD0500A11A41 /* RegisterViewController.swift */,
 				37BD48562235D90D00BC06D3 /* GroupViewController.swift */,
 				376AD8D8223628BF002F0CCA /* ChatViewController2.swift */,
 				37EBB3E9224EECE80074CF3A /* ChatViewController.swift */,
+				3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -538,7 +544,9 @@
 				37EBB3F4224F08160074CF3A /* UIImage+Additions.swift in Sources */,
 				37530F21223722FC004DB7DB /* Groups.swift in Sources */,
 				37BD485A2235EDBA00BC06D3 /* GroupCell.swift in Sources */,
+				3B47262C224FFD0500A11A41 /* RegisterViewController.swift in Sources */,
 				3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */,
+				3B47262E224FFD1500A11A41 /* ProfileSetupViewController.swift in Sources */,
 				37530F1B2236BED1004DB7DB /* Members.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
