@@ -91,6 +91,14 @@ class HomeController: UIViewController {
         }
     }
     
+    @IBAction func pinButton(_ sender: Any) {
+        if let card = getCurrentCard(){
+            let cardIndex = cardDeck.count-1
+            card.swipeUp()
+            cardDeck.remove(at: cardIndex)
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         if(ideasCurrentDeck){
             getIdeaDeck()

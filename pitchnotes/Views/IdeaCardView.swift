@@ -57,4 +57,5 @@ class IdeaCardView: CardView {
         addSubview(swipeOverlay)
         swipeOverlay.fillSuperview()
     }
+    
 }
