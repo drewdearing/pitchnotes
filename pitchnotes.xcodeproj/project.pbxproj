@@ -26,6 +26,12 @@
 		37EBB3F0224EFBF80074CF3A /* UICollectionView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3EF224EFBF80074CF3A /* UICollectionView+Additions.swift */; };
 		37EBB3F2224F07160074CF3A /* DatabaseRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3F1224F07160074CF3A /* DatabaseRepresentation.swift */; };
 		37EBB3F4224F08160074CF3A /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3F3224F08160074CF3A /* UIImage+Additions.swift */; };
+		37EBB3FC22501EC00074CF3A /* PinnedIdeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3FA22501EC00074CF3A /* PinnedIdeaCell.swift */; };
+		37EBB3FD22501EC00074CF3A /* PinnedIdeaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EBB3FB22501EC00074CF3A /* PinnedIdeaCell.xib */; };
+		37EBB3FF22502A860074CF3A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3FE22502A860074CF3A /* MenuViewController.swift */; };
+		37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB40022502F9C0074CF3A /* Preferences.swift */; };
+		37EBB4042250321A0074CF3A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB4032250321A0074CF3A /* SideMenuCell.swift */; };
+		37EBB406225033880074CF3A /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB405225033880074CF3A /* TempViewController.swift */; };
 		3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2471A92232F7B5001E7D07 /* LoginController.swift */; };
 		3B2B08942234F74F000BB2A4 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */; };
 		3B2B089622350049000BB2A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B089522350049000BB2A4 /* CardView.swift */; };
@@ -86,6 +92,12 @@
 		37EBB3EF224EFBF80074CF3A /* UICollectionView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Additions.swift"; sourceTree = "<group>"; };
 		37EBB3F1224F07160074CF3A /* DatabaseRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepresentation.swift; sourceTree = "<group>"; };
 		37EBB3F3224F08160074CF3A /* UIImage+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
+		37EBB3FA22501EC00074CF3A /* PinnedIdeaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedIdeaCell.swift; sourceTree = "<group>"; };
+		37EBB3FB22501EC00074CF3A /* PinnedIdeaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinnedIdeaCell.xib; sourceTree = "<group>"; };
+		37EBB3FE22502A860074CF3A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		37EBB40022502F9C0074CF3A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		37EBB4032250321A0074CF3A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		37EBB405225033880074CF3A /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		3B2471A92232F7B5001E7D07 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		3B2B089522350049000BB2A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -164,6 +176,7 @@
 				37530F20223722FB004DB7DB /* Groups.swift */,
 				37530F1C2236BF56004DB7DB /* BaseAPI.swift */,
 				37EBB3D7224E915B0074CF3A /* Message.swift */,
+				37EBB40022502F9C0074CF3A /* Preferences.swift */,
 				37EBB3F1224F07160074CF3A /* DatabaseRepresentation.swift */,
 			);
 			path = Models;
@@ -179,6 +192,23 @@
 				376AD8DA22362DC8002F0CCA /* PersonCell.swift */,
 			);
 			path = IdeaGroups;
+			sourceTree = "<group>";
+		};
+		37EBB3F922501E5E0074CF3A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				37EBB3FA22501EC00074CF3A /* PinnedIdeaCell.swift */,
+				37EBB3FB22501EC00074CF3A /* PinnedIdeaCell.xib */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		37EBB402225031E90074CF3A /* Side Menu items  */ = {
+			isa = PBXGroup;
+			children = (
+				37EBB4032250321A0074CF3A /* SideMenuCell.swift */,
+			);
+			path = "Side Menu items ";
 			sourceTree = "<group>";
 		};
 		3B45EA0A2215C7A60007D747 = {
@@ -251,6 +281,8 @@
 				376AD8D8223628BF002F0CCA /* ChatViewController2.swift */,
 				37EBB3E9224EECE80074CF3A /* ChatViewController.swift */,
 				3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */,
+				37EBB3FE22502A860074CF3A /* MenuViewController.swift */,
+				37EBB405225033880074CF3A /* TempViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -269,6 +301,8 @@
 		3BE37BED2231BD570091A7BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37EBB402225031E90074CF3A /* Side Menu items  */,
+				37EBB3F922501E5E0074CF3A /* New Group */,
 				37BD48512235AD1F00BC06D3 /* IdeaGroups */,
 				3B519BF122345AF30039BAFC /* IdeaCard.xib */,
 				3B519BF322345B060039BAFC /* IdeaCardView.swift */,
@@ -402,6 +436,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B45EA212215C7A70007D747 /* LaunchScreen.storyboard in Resources */,
+				37EBB3FD22501EC00074CF3A /* PinnedIdeaCell.xib in Resources */,
 				37BD485B2235EDBA00BC06D3 /* GroupCell.xib in Resources */,
 				37BD48272233034700BC06D3 /* GoogleService-Info.plist in Resources */,
 				3B519BF222345AF30039BAFC /* IdeaCard.xib in Resources */,
@@ -481,6 +516,7 @@
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenuSwift/SideMenuSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -497,6 +533,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenuSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -541,6 +578,7 @@
 				37BD485E2235F26F00BC06D3 /* SectionCell.swift in Sources */,
 				37EBB3EE224EFA340074CF3A /* UIColor+Additions.swift in Sources */,
 				37EBB3D8224E915B0074CF3A /* Message.swift in Sources */,
+				37EBB3FF22502A860074CF3A /* MenuViewController.swift in Sources */,
 				3B2B08942234F74F000BB2A4 /* ProfileCardView.swift in Sources */,
 				376AD8DB22362DC8002F0CCA /* PersonCell.swift in Sources */,
 				37EBB3F2224F07160074CF3A /* DatabaseRepresentation.swift in Sources */,
@@ -548,11 +586,15 @@
 				37EBB3F4224F08160074CF3A /* UIImage+Additions.swift in Sources */,
 				37530F21223722FC004DB7DB /* Groups.swift in Sources */,
 				37BD485A2235EDBA00BC06D3 /* GroupCell.swift in Sources */,
+				37EBB4042250321A0074CF3A /* SideMenuCell.swift in Sources */,
 				3B47262C224FFD0500A11A41 /* RegisterViewController.swift in Sources */,
 				3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */,
+				37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */,
 				3B47262E224FFD1500A11A41 /* ProfileSetupViewController.swift in Sources */,
+				37EBB406225033880074CF3A /* TempViewController.swift in Sources */,
 				37530F1B2236BED1004DB7DB /* Members.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
+				37EBB3FC22501EC00074CF3A /* PinnedIdeaCell.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
 				37EBB3F0224EFBF80074CF3A /* UICollectionView+Additions.swift in Sources */,
 				37EBB3E8224E9C850074CF3A /* AppSettings.swift in Sources */,

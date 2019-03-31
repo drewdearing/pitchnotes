@@ -243,6 +243,9 @@ class HomeController: UIViewController {
             self.setCurrentTask(task:task)
         }
     }
-
+    @IBAction func sideBarPressed(_ sender: Any) {
+        sideMenuController?.revealMenu()
+    }
+    
 }
 
