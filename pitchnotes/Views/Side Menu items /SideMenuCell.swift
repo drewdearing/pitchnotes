@@ -10,8 +10,7 @@ import UIKit
 
 class SideMenuCell: UITableViewCell {
 
-    @IBOutlet weak var menuIcon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleImage: UIImageView!
     
-
 }

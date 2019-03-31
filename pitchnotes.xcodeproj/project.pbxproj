@@ -28,10 +28,10 @@
 		37EBB3F4224F08160074CF3A /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3F3224F08160074CF3A /* UIImage+Additions.swift */; };
 		37EBB3FC22501EC00074CF3A /* PinnedIdeaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3FA22501EC00074CF3A /* PinnedIdeaCell.swift */; };
 		37EBB3FD22501EC00074CF3A /* PinnedIdeaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EBB3FB22501EC00074CF3A /* PinnedIdeaCell.xib */; };
-		37EBB3FF22502A860074CF3A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB3FE22502A860074CF3A /* MenuViewController.swift */; };
 		37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB40022502F9C0074CF3A /* Preferences.swift */; };
 		37EBB4042250321A0074CF3A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB4032250321A0074CF3A /* SideMenuCell.swift */; };
 		37EBB406225033880074CF3A /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB405225033880074CF3A /* TempViewController.swift */; };
+		37EBB40822503E910074CF3A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB40722503E910074CF3A /* MenuViewController.swift */; };
 		3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2471A92232F7B5001E7D07 /* LoginController.swift */; };
 		3B2B08942234F74F000BB2A4 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */; };
 		3B2B089622350049000BB2A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B089522350049000BB2A4 /* CardView.swift */; };
@@ -94,10 +94,10 @@
 		37EBB3F3224F08160074CF3A /* UIImage+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		37EBB3FA22501EC00074CF3A /* PinnedIdeaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedIdeaCell.swift; sourceTree = "<group>"; };
 		37EBB3FB22501EC00074CF3A /* PinnedIdeaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinnedIdeaCell.xib; sourceTree = "<group>"; };
-		37EBB3FE22502A860074CF3A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		37EBB40022502F9C0074CF3A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		37EBB4032250321A0074CF3A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		37EBB405225033880074CF3A /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		37EBB40722503E910074CF3A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3B2471A92232F7B5001E7D07 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		3B2B089522350049000BB2A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -281,8 +281,8 @@
 				376AD8D8223628BF002F0CCA /* ChatViewController2.swift */,
 				37EBB3E9224EECE80074CF3A /* ChatViewController.swift */,
 				3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */,
-				37EBB3FE22502A860074CF3A /* MenuViewController.swift */,
 				37EBB405225033880074CF3A /* TempViewController.swift */,
+				37EBB40722503E910074CF3A /* MenuViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -578,9 +578,9 @@
 				37BD485E2235F26F00BC06D3 /* SectionCell.swift in Sources */,
 				37EBB3EE224EFA340074CF3A /* UIColor+Additions.swift in Sources */,
 				37EBB3D8224E915B0074CF3A /* Message.swift in Sources */,
-				37EBB3FF22502A860074CF3A /* MenuViewController.swift in Sources */,
 				3B2B08942234F74F000BB2A4 /* ProfileCardView.swift in Sources */,
 				376AD8DB22362DC8002F0CCA /* PersonCell.swift in Sources */,
+				37EBB40822503E910074CF3A /* MenuViewController.swift in Sources */,
 				37EBB3F2224F07160074CF3A /* DatabaseRepresentation.swift in Sources */,
 				3B45EA192215C7A60007D747 /* HomeController.swift in Sources */,
 				37EBB3F4224F08160074CF3A /* UIImage+Additions.swift in Sources */,

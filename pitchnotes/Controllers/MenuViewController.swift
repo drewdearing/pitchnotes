@@ -9,25 +9,26 @@
 import UIKit
 import SideMenuSwift
 
+class Preferences {
+    static let shared = Preferences()
+    var enableTransitionAnimation = false
+}
+
 class MenuViewController: UIViewController {
     var isDarkModeEnabled = false
-    @IBOutlet weak var tableView: UITableView!{
+    
+    @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.separatorStyle = .none
         }
     }
-
     
     @IBOutlet weak var selectionTableViewHeader: UILabel!
     @IBOutlet weak var selectionMenuTrailingConstraint: NSLayoutConstraint!
     
-    
-    
     private var themeColor = UIColor.white
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,12 +36,20 @@ class MenuViewController: UIViewController {
         configureView()
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "SecondViewController")
+            self.storyboard?.instantiateViewController(withIdentifier: "HomeView")
+        }, with: "0")
+        
+        sideMenuController?.cache(viewControllerGenerator: {
+            UIStoryboard(name: "MatchedGroups", bundle: nil).instantiateViewController(withIdentifier: "MatchedGroupsViewController")
         }, with: "1")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "ThirdViewController")
+            UIStoryboard(name: "MatchedGroups", bundle: nil).instantiateViewController(withIdentifier: "MatchedGroupsViewController")
         }, with: "2")
+        
+        sideMenuController?.cache(viewControllerGenerator: {
+            self.storyboard?.instantiateViewController(withIdentifier: "LoginController")
+        }, with: "3")
         
         sideMenuController?.delegate = self
     }
@@ -108,7 +117,7 @@ extension MenuViewController: SideMenuControllerDelegate {
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     // swiftlint:disable force_cast
@@ -117,11 +126,17 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.backgroundColor = themeColor
         let row = indexPath.row
         if row == 0 {
-            cell.titleLabel?.text = "Preferences"
+            cell.titleLabel?.text = "Home"
+            cell.titleImage.image = UIImage(named: "home")
         } else if row == 1 {
-            cell.titleLabel?.text = "Scroll View and Others"
+            cell.titleLabel?.text = "Pitches"
+            cell.titleImage.image = UIImage(named: "group")
         } else if row == 2 {
-            cell.titleLabel?.text = "IB / Code"
+            cell.titleLabel?.text = "Profile"
+            cell.titleImage.image = UIImage(named: "profile")
+        } else if row == 3 {
+            cell.titleLabel?.text = "Logout"
+            cell.titleImage.image = UIImage(named: "logout")
         }
         cell.titleLabel?.textColor = isDarkModeEnabled ? .white : .black
         return cell
@@ -130,7 +145,7 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = indexPath.row
         
-        sideMenuController?.setContentViewController(with: "\(row)", animated: false)
+        sideMenuController?.setContentViewController(with: "\(row)", animated: Preferences.shared.enableTransitionAnimation)
         sideMenuController?.hideMenu()
         
         if let identifier = sideMenuController?.currentCacheIdentifier() {
@@ -139,11 +154,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 56
     }
 }
 
 class SelectionCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
 }
-
