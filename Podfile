@@ -12,6 +12,7 @@ target 'pitchnotes' do
   pod 'SVProgressHUD'
   pod 'MessageKit'
   pod 'SideMenuSwift'
+  pod 'TTSegmentedControl'
 
   target 'pitchnotesTests' do
     inherit! :search_paths

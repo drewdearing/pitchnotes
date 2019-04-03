@@ -106,6 +106,7 @@ PODS:
   - Protobuf (3.7.0)
   - SideMenuSwift (1.0.2)
   - SVProgressHUD (2.2.5)
+  - TTSegmentedControl (0.4.7)
 
 DEPENDENCIES:
   - Firebase/Auth
@@ -114,6 +115,7 @@ DEPENDENCIES:
   - MessageKit
   - SideMenuSwift
   - SVProgressHUD
+  - TTSegmentedControl
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -139,6 +141,7 @@ SPEC REPOS:
     - Protobuf
     - SideMenuSwift
     - SVProgressHUD
+    - TTSegmentedControl
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -163,7 +166,8 @@ SPEC CHECKSUMS:
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SideMenuSwift: 435ede4955a813fc4fd6c822c067784626621448
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TTSegmentedControl: 422a8fab507a02a60050476d69d577052550f592
 
-PODFILE CHECKSUM: 86702756c90a236afb0329a1c9090c37863d974e
+PODFILE CHECKSUM: e398fdc69276edc747490f22c754300df9038435
 
 COCOAPODS: 1.6.1

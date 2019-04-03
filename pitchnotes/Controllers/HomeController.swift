@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import SVProgressHUD
+import TTSegmentedControl
 
 struct IdeaDeck: Codable {
     var deck: [Idea]
@@ -58,22 +59,21 @@ class HomeController: UIViewController {
     var cardDeck = Array<CardView>()
     var ideasCurrentDeck = true
     var currentTask:URLSessionDataTask?
-    @IBOutlet weak var switchButton: UIButton!
     
     @IBOutlet weak var cardDeckView: UIView!
     
-    @IBAction func switchDecks(_ sender: Any) {
-        if(ideasCurrentDeck){
+    func switchDecks(index: Int) {
+        if index == 0{
+            getIdeaDeck()
+            ideasCurrentDeck = true
+        }else{
             getProfileDeck()
-            switchButton.setImage(#imageLiteral(resourceName: "candidates_top"), for: .normal)
             ideasCurrentDeck = false
         }
-        else{
-            getIdeaDeck()
-            switchButton.setImage(#imageLiteral(resourceName: "idea_top"), for: .normal)
-            ideasCurrentDeck = true
-        }
     }
+    
+    
+    
     
     @IBAction func likeButton(_ sender: Any) {
         if let card = getCurrentCard(){
@@ -102,16 +102,66 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if(ideasCurrentDeck){
             getIdeaDeck()
-            switchButton.setImage(#imageLiteral(resourceName: "idea_top"), for: .normal)
+            //switchButton.setImage(#imageLiteral(resourceName: "idea_top"), for: .normal)
         }
         else{
             getProfileDeck()
-            switchButton.setImage(#imageLiteral(resourceName: "candidates_top"), for: .normal)
+            //switchButton.setImage(#imageLiteral(resourceName: "candidates_top"), for: .normal)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //add segmented control to the view
+        let segmentedControl = TTSegmentedControl()
+        segmentedControl.itemTitles = ["1", "2"]
+        segmentedControl.allowChangeThumbWidth = false
+        
+        segmentedControl.frame = CGRect(x: 50, y: 50, width: 80, height: 40)
+        
+        segmentedControl.didSelectItemWith = { (index, title) -> () in
+            self.switchDecks(index: index)
+        }
+        
+        view.addSubview(segmentedControl)
+//
+//        let imageAttachment = NSTextAttachment()
+//        imageAttachment.image = UIImage(named:"idea_deck")
+//        imageAttachment.bounds = CGRect(x: 0, y: -5, width: 20, height: 20)
+//
+//        let attributes = NSAttributedString(attachment: imageAttachment)
+//
+//        segmentedControl.changeAttributedTitle(attributes, selectedTile: attributes, atIndex: 0)
+        
+        //replace title with image.
+        segmentedControl.layoutSubviews()
+        let imageAttachment0 = NSTextAttachment()
+        imageAttachment0.image = UIImage(named:"idea_deck")
+        imageAttachment0.bounds = CGRect(x: 0, y: -5, width: 20, height: 20)
+        
+        let attributes0 = NSAttributedString(attachment: imageAttachment0)
+        
+        segmentedControl.changeAttributedTitle(attributes0, selectedTile: attributes0, atIndex: 0)
+        
+        let imageAttachment1 = NSTextAttachment()
+        imageAttachment1.image = UIImage(named:"matched-groups")
+        imageAttachment1.bounds = CGRect(x: 0, y: -5, width: 20, height: 20)
+        let attributes1 = NSAttributedString(attachment: imageAttachment1)
+        segmentedControl.changeAttributedTitle(attributes1, selectedTile: attributes1, atIndex: 1)
+        
+        
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        let horizontalConstraint = NSLayoutConstraint(item: segmentedControl, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1, constant: 0)
+
+        let widthConstraint = NSLayoutConstraint(item: segmentedControl, attribute: NSLayoutConstraint.Attribute.width, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 100)
+        let heightConstraint = NSLayoutConstraint(item: segmentedControl, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1, constant: 40)
+        view.addConstraints([horizontalConstraint, widthConstraint, heightConstraint])
+        
+        let margins = view.layoutMarginsGuide
+        NSLayoutConstraint.activate([
+            segmentedControl.topAnchor.constraint(equalTo: margins.topAnchor, constant: 20)
+            ])
         
     }
     
