@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		37324DDF2255856D004B1820 /* NewPitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37324DDE2255856D004B1820 /* NewPitchViewController.swift */; };
+		37324DE12255A0AF004B1820 /* PublishPitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37324DE02255A0AF004B1820 /* PublishPitchViewController.swift */; };
+		37324DE32255BE6C004B1820 /* NewPitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37324DE22255BE6C004B1820 /* NewPitch.swift */; };
 		37530F1B2236BED1004DB7DB /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F1A2236BED1004DB7DB /* Members.swift */; };
 		37530F1D2236BF56004DB7DB /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F1C2236BF56004DB7DB /* BaseAPI.swift */; };
 		37530F21223722FC004DB7DB /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F20223722FB004DB7DB /* Groups.swift */; };
@@ -74,6 +76,8 @@
 /* Begin PBXFileReference section */
 		001697E354611BDA15B7B67B /* Pods-pitchnotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pitchnotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pitchnotesUITests/Pods-pitchnotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		37324DDE2255856D004B1820 /* NewPitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPitchViewController.swift; sourceTree = "<group>"; };
+		37324DE02255A0AF004B1820 /* PublishPitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublishPitchViewController.swift; sourceTree = "<group>"; };
+		37324DE22255BE6C004B1820 /* NewPitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPitch.swift; sourceTree = "<group>"; };
 		37530F1A2236BED1004DB7DB /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		37530F1C2236BF56004DB7DB /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		37530F20223722FB004DB7DB /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			children = (
 				37530F1A2236BED1004DB7DB /* Members.swift */,
 				37530F20223722FB004DB7DB /* Groups.swift */,
+				37324DE22255BE6C004B1820 /* NewPitch.swift */,
 				37530F1C2236BF56004DB7DB /* BaseAPI.swift */,
 				37EBB3D7224E915B0074CF3A /* Message.swift */,
 				37EBB40022502F9C0074CF3A /* Preferences.swift */,
@@ -283,6 +288,7 @@
 				3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */,
 				37EBB40722503E910074CF3A /* MenuViewController.swift */,
 				37324DDE2255856D004B1820 /* NewPitchViewController.swift */,
+				37324DE02255A0AF004B1820 /* PublishPitchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -596,11 +602,13 @@
 				37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */,
 				3B47262E224FFD1500A11A41 /* ProfileSetupViewController.swift in Sources */,
 				37530F1B2236BED1004DB7DB /* Members.swift in Sources */,
+				37324DE32255BE6C004B1820 /* NewPitch.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
 				37324DDF2255856D004B1820 /* NewPitchViewController.swift in Sources */,
 				37EBB3FC22501EC00074CF3A /* PinnedIdeaCell.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
 				37EBB3F0224EFBF80074CF3A /* UICollectionView+Additions.swift in Sources */,
+				37324DE12255A0AF004B1820 /* PublishPitchViewController.swift in Sources */,
 				37EBB3E8224E9C850074CF3A /* AppSettings.swift in Sources */,
 				37EBB3EA224EECE80074CF3A /* ChatViewController.swift in Sources */,
 				37530F1D2236BF56004DB7DB /* BaseAPI.swift in Sources */,
