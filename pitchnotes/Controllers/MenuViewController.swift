@@ -34,7 +34,7 @@ class MenuViewController: UIViewController {
         
         isDarkModeEnabled = SideMenuController.preferences.basic.position == .under
         configureView()
-        
+        SideMenuController.preferences.basic.enablePanGesture = false
         sideMenuController?.cache(viewControllerGenerator: {
             self.storyboard?.instantiateViewController(withIdentifier: "HomeView")
         }, with: "0")

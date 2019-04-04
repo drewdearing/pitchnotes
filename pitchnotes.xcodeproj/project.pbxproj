@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37324DDF2255856D004B1820 /* NewPitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37324DDE2255856D004B1820 /* NewPitchViewController.swift */; };
 		37530F1B2236BED1004DB7DB /* Members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F1A2236BED1004DB7DB /* Members.swift */; };
 		37530F1D2236BF56004DB7DB /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F1C2236BF56004DB7DB /* BaseAPI.swift */; };
 		37530F21223722FC004DB7DB /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37530F20223722FB004DB7DB /* Groups.swift */; };
@@ -30,7 +31,6 @@
 		37EBB3FD22501EC00074CF3A /* PinnedIdeaCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37EBB3FB22501EC00074CF3A /* PinnedIdeaCell.xib */; };
 		37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB40022502F9C0074CF3A /* Preferences.swift */; };
 		37EBB4042250321A0074CF3A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB4032250321A0074CF3A /* SideMenuCell.swift */; };
-		37EBB406225033880074CF3A /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB405225033880074CF3A /* TempViewController.swift */; };
 		37EBB40822503E910074CF3A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB40722503E910074CF3A /* MenuViewController.swift */; };
 		3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2471A92232F7B5001E7D07 /* LoginController.swift */; };
 		3B2B08942234F74F000BB2A4 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */; };
@@ -73,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		001697E354611BDA15B7B67B /* Pods-pitchnotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pitchnotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-pitchnotesUITests/Pods-pitchnotesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		37324DDE2255856D004B1820 /* NewPitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPitchViewController.swift; sourceTree = "<group>"; };
 		37530F1A2236BED1004DB7DB /* Members.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Members.swift; sourceTree = "<group>"; };
 		37530F1C2236BF56004DB7DB /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
 		37530F20223722FB004DB7DB /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		37EBB3FB22501EC00074CF3A /* PinnedIdeaCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinnedIdeaCell.xib; sourceTree = "<group>"; };
 		37EBB40022502F9C0074CF3A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		37EBB4032250321A0074CF3A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
-		37EBB405225033880074CF3A /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		37EBB40722503E910074CF3A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		3B2471A92232F7B5001E7D07 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
@@ -281,8 +281,8 @@
 				376AD8D8223628BF002F0CCA /* ChatViewController2.swift */,
 				37EBB3E9224EECE80074CF3A /* ChatViewController.swift */,
 				3B47262D224FFD1500A11A41 /* ProfileSetupViewController.swift */,
-				37EBB405225033880074CF3A /* TempViewController.swift */,
 				37EBB40722503E910074CF3A /* MenuViewController.swift */,
+				37324DDE2255856D004B1820 /* NewPitchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -512,6 +512,7 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageInputBar/MessageInputBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MessageKit/MessageKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -530,6 +531,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageInputBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MessageKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -593,9 +595,9 @@
 				3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */,
 				37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */,
 				3B47262E224FFD1500A11A41 /* ProfileSetupViewController.swift in Sources */,
-				37EBB406225033880074CF3A /* TempViewController.swift in Sources */,
 				37530F1B2236BED1004DB7DB /* Members.swift in Sources */,
 				3B45EA172215C7A60007D747 /* AppDelegate.swift in Sources */,
+				37324DDF2255856D004B1820 /* NewPitchViewController.swift in Sources */,
 				37EBB3FC22501EC00074CF3A /* PinnedIdeaCell.swift in Sources */,
 				3BE37BEC2231A63E0091A7BA /* Extensions+UIView.swift in Sources */,
 				37EBB3F0224EFBF80074CF3A /* UICollectionView+Additions.swift in Sources */,

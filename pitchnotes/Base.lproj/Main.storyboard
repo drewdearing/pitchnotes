@@ -412,11 +412,6 @@
                                                     <constraint firstAttribute="height" constant="80" id="Kd6-Xf-PLJ"/>
                                                 </constraints>
                                                 <state key="normal" image="top_right_pin"/>
-                                                <connections>
-                                                    <segue destination="jLE-lZ-dQl" kind="popoverPresentation" popoverAnchorView="S6k-9n-sXv" id="YFX-gO-ASz">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -474,7 +469,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avk-cM-o4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486.9565217391305" y="318.75"/>
+            <point key="canvasLocation" x="2477" y="25"/>
         </scene>
         <!--Side Menu Controller-->
         <scene sceneID="lGX-Yq-ndy">
@@ -592,22 +587,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gRZ-B3-IDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="-730.58035714285711"/>
-        </scene>
-        <!--PinList-->
-        <scene sceneID="TSa-4u-6Fb">
-            <objects>
-                <viewControllerPlaceholder storyboardName="PinList" id="jLE-lZ-dQl" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TwX-f4-RuJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3236" y="-13"/>
-        </scene>
-        <!--MatchedGroups-->
-        <scene sceneID="3la-lZ-UQf">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MatchedGroups" id="ZoQ-dl-M9R" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GNa-iJ-vh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2279" y="-148"/>
         </scene>
     </scenes>
     <resources>

@@ -13,6 +13,7 @@ target 'pitchnotes' do
   pod 'MessageKit'
   pod 'SideMenuSwift'
   pod 'TTSegmentedControl'
+  pod 'IQKeyboardManagerSwift'
 
   target 'pitchnotesTests' do
     inherit! :search_paths

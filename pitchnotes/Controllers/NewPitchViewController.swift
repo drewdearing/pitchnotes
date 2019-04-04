@@ -1,26 +1,25 @@
 //
-//  TempViewController.swift
+//  NewPitchViewController.swift
 //  pitchnotes
 //
-//  Created by Xi Jin on 3/30/19.
+//  Created by Xi Jin on 4/3/19.
 //  Copyright © 2019 Drew Dearing. All rights reserved.
 //
 
 import UIKit
-import SideMenuSwift
 
-class TempViewController: UIViewController {
+class NewPitchViewController: UIViewController, UINavigationBarDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func didclickedMenu(_ sender: Any) {
-        sideMenuController?.revealMenu()
+    @IBAction func cancelPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    
     /*
     // MARK: - Navigation
 
