@@ -457,12 +457,21 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhS-YO-OR3">
+                                <rect key="frame" x="16" y="438.66666666666669" width="382" height="28.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="AhS-YO-OR3" firstAttribute="centerX" secondItem="j7j-b9-eCO" secondAttribute="centerX" id="7fC-dA-9l3"/>
+                            <constraint firstItem="AhS-YO-OR3" firstAttribute="centerY" secondItem="j7j-b9-eCO" secondAttribute="centerY" id="8e1-MD-kec"/>
                             <constraint firstItem="j7j-b9-eCO" firstAttribute="bottom" secondItem="n8c-tw-2sX" secondAttribute="bottom" id="RM7-jI-ZCz"/>
                             <constraint firstItem="j7j-b9-eCO" firstAttribute="trailing" secondItem="n8c-tw-2sX" secondAttribute="trailing" constant="-16" id="YGu-cK-bGR"/>
                             <constraint firstItem="j7j-b9-eCO" firstAttribute="top" secondItem="n8c-tw-2sX" secondAttribute="top" id="eXN-Tw-leY"/>
+                            <constraint firstItem="AhS-YO-OR3" firstAttribute="width" secondItem="j7j-b9-eCO" secondAttribute="width" id="jgm-CA-cSV"/>
                             <constraint firstItem="j7j-b9-eCO" firstAttribute="leading" secondItem="n8c-tw-2sX" secondAttribute="leading" constant="16" id="td9-Lv-hfP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="n8c-tw-2sX"/>
@@ -470,11 +479,12 @@
                     <connections>
                         <outlet property="cardDeckView" destination="twZ-5t-Qpv" id="hfw-Fi-t3m"/>
                         <outlet property="pinButton" destination="S6k-9n-sXv" id="Rbb-nE-W8u"/>
+                        <outlet property="statusLabel" destination="AhS-YO-OR3" id="k6g-mo-U5t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avk-cM-o4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="25"/>
+            <point key="canvasLocation" x="2476.811594202899" y="24.776785714285712"/>
         </scene>
         <!--Side Menu Controller-->
         <scene sceneID="lGX-Yq-ndy">

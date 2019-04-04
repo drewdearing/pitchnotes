@@ -63,6 +63,7 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var cardDeckView: UIView!
     @IBOutlet weak var pinButton: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
     
     func switchDecks(index: Int) {
         pinnedDeck = false
@@ -220,6 +221,7 @@ class HomeController: UIViewController {
     }
     
     func getIdeaDeck() {
+        statusLabel.isHidden = true
         clearDeck()
         let currentUser = Auth.auth().currentUser
         currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
@@ -265,6 +267,17 @@ class HomeController: UIViewController {
                             self.cardDeck.append(cardView)
                         }
                     })
+                    if ideaDeck.deck.count <= 0 {
+                        DispatchQueue.main.async {
+                            self.statusLabel.isHidden = false
+                            if self.pinnedDeck {
+                                self.statusLabel.text = "No Pinned Ideas!"
+                            }
+                            else{
+                                self.statusLabel.text = "No New Ideas Yet!"
+                            }
+                        }
+                    }
                     
                 } catch let jsonErr {
                     print("Error: \(jsonErr)")
@@ -275,6 +288,7 @@ class HomeController: UIViewController {
     }
     
     func getProfileDeck(){
+        statusLabel.isHidden = true
         clearDeck()
         let currentUser = Auth.auth().currentUser
         currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
@@ -319,6 +333,17 @@ class HomeController: UIViewController {
                             self.cardDeck.append(cardView)
                         }
                     })
+                    if candidatesDeck.deck.count <= 0 {
+                        DispatchQueue.main.async {
+                            self.statusLabel.isHidden = false
+                            if self.pinnedDeck {
+                                self.statusLabel.text = "No Pinned Candidates!"
+                            }
+                            else{
+                                self.statusLabel.text = "No Candidates Yet!"
+                            }
+                        }
+                    }
                 } catch let jsonErr {
                     print("Error: \(jsonErr)")
                 }
