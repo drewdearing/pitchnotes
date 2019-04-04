@@ -19,32 +19,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sqy-L2-YPG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="240"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="sqy-L2-YPG" secondAttribute="height" multiplier="25:16" id="TUE-SQ-aSx"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="64" width="375" height="241"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name, Class of 20xx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgK-8q-2i6">
-                                <rect key="frame" x="16" y="312" width="179" height="24"/>
+                                <rect key="frame" x="16" y="313" width="179" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhc-QJ-6Ph">
-                                <rect key="frame" x="16" y="344" width="41" height="21"/>
+                                <rect key="frame" x="16" y="345" width="41" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WON-Vs-ahR">
-                                <rect key="frame" x="16" y="373" width="40" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WON-Vs-ahR">
+                                <rect key="frame" x="16" y="374" width="39.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWj-X7-dwc">
-                                <rect key="frame" x="16" y="402" width="343" height="249"/>
-                                <mutableString key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label </mutableString>
+                                <rect key="frame" x="16" y="402.5" width="343" height="248.5"/>
+                                <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -64,6 +61,7 @@
                             <constraint firstItem="YWj-X7-dwc" firstAttribute="leading" secondItem="CpS-0X-AYk" secondAttribute="leading" constant="16" id="brS-rA-ENi"/>
                             <constraint firstItem="sqy-L2-YPG" firstAttribute="trailing" secondItem="CpS-0X-AYk" secondAttribute="trailing" id="jSF-5D-jq6"/>
                             <constraint firstItem="sqy-L2-YPG" firstAttribute="leading" secondItem="CpS-0X-AYk" secondAttribute="leading" id="nt7-5V-MqG"/>
+                            <constraint firstItem="sqy-L2-YPG" firstAttribute="height" secondItem="CpS-0X-AYk" secondAttribute="height" multiplier="0.4" id="tvw-92-DAx"/>
                             <constraint firstItem="YWj-X7-dwc" firstAttribute="top" secondItem="WON-Vs-ahR" secondAttribute="bottom" constant="8" id="uya-AS-dGs"/>
                             <constraint firstItem="CpS-0X-AYk" firstAttribute="trailing" secondItem="YWj-X7-dwc" secondAttribute="trailing" constant="16" id="yCJ-lv-dYf"/>
                             <constraint firstItem="Bhc-QJ-6Ph" firstAttribute="top" secondItem="pgK-8q-2i6" secondAttribute="bottom" constant="8" id="zEj-Sv-QQq"/>
