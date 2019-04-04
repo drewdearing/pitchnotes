@@ -43,9 +43,13 @@ class Groups{
             request.addValue("Bearer \(idToken)", forHTTPHeaderField: "Authorization")
             
             URLSession.shared.dataTask(with: request as URLRequest) { (data, response, err) in
-                guard let data = data else { return }
+                guard let data = data else {
+                    print("data issue when get matched groups")
+                    return
+                }
                 do {
                     let matchedGroups = try JSONDecoder().decode(MatchedGroups.self, from: data)
+                    print(matchedGroups)
                     completion(matchedGroups, nil)
                 } catch let jsonErr {
                     print("Error: \(jsonErr)")

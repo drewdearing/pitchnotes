@@ -246,7 +246,8 @@ extension ChatViewController: MessageInputBarDelegate {
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
         
         // 1
-        let message = Message(user: user, content: text)
+        guard let profile = getCurrentProfile() else {return}
+        let message = Message(user: user, content: text, name: profile.name)
         
         // 2
         save(message)

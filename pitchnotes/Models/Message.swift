@@ -55,16 +55,17 @@ struct Message: MessageType {
     var image: UIImage? = nil
     var downloadURL: URL? = nil
     
-    init(user: User, content: String) {
+    init(user: User, content: String, name: String) {
         
-        sender = Sender(id: user.uid, displayName: user.uid)
+        sender = Sender(id: user.uid, displayName: name)
         self.content = content
         sentDate = Date()
         id = nil
     }
     
-    init(user: User, image: UIImage) {
-        sender = Sender(id: user.uid, displayName: user.uid)
+    init(user: User, image: UIImage, name: String) {
+        
+        sender = Sender(id: user.uid, displayName: name)
         self.image = image
         content = ""
         sentDate = Date()
