@@ -44,7 +44,7 @@ class MenuViewController: UIViewController {
         }, with: "1")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            UIStoryboard(name: "MatchedGroups", bundle: nil).instantiateViewController(withIdentifier: "MatchedGroupsViewController")
+            UIStoryboard(name: "Profile", bundle: nil).instantiateViewController(withIdentifier: "ProfileViewController")
         }, with: "2")
         
         sideMenuController?.cache(viewControllerGenerator: {
