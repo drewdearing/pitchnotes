@@ -267,6 +267,7 @@ class HomeController: UIViewController {
                             self.cardDeck.append(cardView)
                         }
                     })
+                    print(ideaDeck.deck.count)
                     if ideaDeck.deck.count <= 0 {
                         DispatchQueue.main.async {
                             self.statusLabel.isHidden = false

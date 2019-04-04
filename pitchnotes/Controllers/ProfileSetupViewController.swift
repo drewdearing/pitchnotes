@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 struct Profile : Codable {
     var name: String
@@ -27,7 +28,12 @@ func getCurrentProfile() -> Profile?{
     return nil
 }
 
-class ProfileSetupViewController: UIViewController {
+class ProfileSetupViewController: UIViewController, ImagePickerDelegate {
+    var imagePicker:ImagePicker!
+    var selectedImage:UIImage?
+    var avatarURL:String?
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -36,9 +42,9 @@ class ProfileSetupViewController: UIViewController {
     @IBOutlet weak var skill2Field: UITextField!
     @IBOutlet weak var skill3Field: UITextField!
     @IBOutlet weak var graduationField: UITextField!
-    @IBOutlet weak var avatarURLField: UITextField!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var selectImageButton: UIButton!
     
     func unlockUI(){
         self.firstNameField.isUserInteractionEnabled = true
@@ -49,7 +55,7 @@ class ProfileSetupViewController: UIViewController {
         self.skill2Field.isUserInteractionEnabled = true
         self.skill3Field.isUserInteractionEnabled = true
         self.graduationField.isUserInteractionEnabled = true
-        self.avatarURLField.isUserInteractionEnabled = true
+        self.selectImageButton.isUserInteractionEnabled = true
         self.doneButton.isUserInteractionEnabled = true
     }
     
@@ -62,14 +68,13 @@ class ProfileSetupViewController: UIViewController {
         self.skill2Field.isUserInteractionEnabled = false
         self.skill3Field.isUserInteractionEnabled = false
         self.graduationField.isUserInteractionEnabled = false
-        self.avatarURLField.isUserInteractionEnabled = false
+        self.selectImageButton.isUserInteractionEnabled = false
         self.doneButton.isUserInteractionEnabled = false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.imagePicker = ImagePicker(presentationController: self, delegate: self)
     }
     
     func getName() -> String? {
@@ -127,29 +132,27 @@ class ProfileSetupViewController: UIViewController {
         return nil
     }
     
-    func getAvatarURL() -> String? {
-        if let avatarURL = avatarURLField.text {
-            if let url = NSURL(string: avatarURL) {
-                if UIApplication.shared.canOpenURL(url as URL) {
-                    return avatarURL
-                }
-            }
-        }
-        return nil
+    func didSelect(image: UIImage?) {
+        selectedImage = image
+        imageView.image = image
     }
     
-    func getRequiredFields() -> Profile? {
+    func getRequiredFields(complete: @escaping (Profile?) -> Void){
         if let name = getName(){
             if let email = getEmail() {
                 if let bio = bioField.text {
                     if let skills = getSkills() {
                         if let graduationYear = getGraduationYear() {
-                            if let avatarURL = getAvatarURL() {
-                                let requiredFields = Profile(name: name, schoolEmail: email, bio: bio, skills: skills, graduate: graduationYear, photoURL: avatarURL)
-                                return requiredFields
+                            if let image = selectedImage {
+                                uploadImage(image: image) { (url) in
+                                    if let avatarURL = url {
+                                        let requiredFields = Profile(name: name, schoolEmail: email, bio: bio, skills: skills, graduate: graduationYear, photoURL: avatarURL)
+                                        complete(requiredFields)
+                                    }
+                                }
                             }
                             else{
-                                statusLabel.text = "Please enter a valid Avatar URL!"
+                                statusLabel.text = "Please select an avatar!"
                             }
                         }
                         else{
@@ -171,54 +174,89 @@ class ProfileSetupViewController: UIViewController {
         else{
             statusLabel.text = "Please enter a first and last name!"
         }
-        return nil
+        complete(nil)
+    }
+    
+    private func uploadImage(image:UIImage, complete: @escaping (String?) -> Void){
+        SVProgressHUD.show(withStatus: "Loading...")
+        let currentUser = Auth.auth().currentUser
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let data = image.pngData()
+        let imageName = "profile_" + currentUser!.uid
+        print(imageName)
+        let imageRef = storageRef.child("\(imageName).png")
+        
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/png"
+        
+        imageRef.putData(data!, metadata: metadata) { (metadata, error) in
+            imageRef.downloadURL { (url, error) in
+                guard url != nil else {
+                    return
+                }
+                //do things that u want to do after download is done
+                if let urlText = url?.absoluteString {
+                    complete(urlText)
+                }
+            }
+        }
+        complete(nil)
+    }
+    
+    @IBAction func selectImage(_ sender: Any) {
+        self.imagePicker.present(from: sender as! UIView)
     }
     
     @IBAction func done(_ sender: Any) {
         lockUI()
-        if let requiredFields = getRequiredFields() {
-            statusLabel.text = "Loading..."
-            let currentUser = Auth.auth().currentUser
-            currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
-                if error != nil {
-                    // Handle error
-                    return;
-                }
-                guard let uploadData = try? JSONEncoder().encode(requiredFields) else {
-                    return
-                }
-                let urlPathBase = "https://us-central1-pitchnote-f1fd4.cloudfunctions.net/user/"
-                let request = NSMutableURLRequest()
-                request.url = URL(string: urlPathBase)
-                request.httpMethod = "PUT"
-                request.addValue("Bearer "+idToken!, forHTTPHeaderField: "Authorization")
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                let task = URLSession.shared.uploadTask(with: request as URLRequest, from: uploadData) { data, response, error in
-                    if let error = error {
-                        print ("error: \(error)")
+        getRequiredFields(complete: { (fields) in
+            if let requiredFields = fields {
+                self.statusLabel.text = "Loading..."
+                let currentUser = Auth.auth().currentUser
+                currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+                    if error != nil {
+                        // Handle error
+                        return;
+                    }
+                    guard let uploadData = try? JSONEncoder().encode(requiredFields) else {
                         return
                     }
-                    guard let response = response as? HTTPURLResponse,
-                        (200...299).contains(response.statusCode) else {
-                            print ("server error")
+                    let urlPathBase = "https://us-central1-pitchnote-f1fd4.cloudfunctions.net/user/"
+                    let request = NSMutableURLRequest()
+                    request.url = URL(string: urlPathBase)
+                    request.httpMethod = "PUT"
+                    request.addValue("Bearer "+idToken!, forHTTPHeaderField: "Authorization")
+                    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                    let task = URLSession.shared.uploadTask(with: request as URLRequest, from: uploadData) { data, response, error in
+                        if let error = error {
+                            print ("error: \(error)")
                             return
+                        }
+                        guard let response = response as? HTTPURLResponse,
+                            (200...299).contains(response.statusCode) else {
+                                print ("server error")
+                                return
+                        }
+                        if let mimeType = response.mimeType,
+                            mimeType == "application/json",
+                            let data = data,
+                            let dataString = String(data: data, encoding: .utf8) {
+                            print ("got data: \(dataString)")
+                        }
+                        DispatchQueue.main.async {
+                            self.statusLabel.text = "Done!"
+                            UserDefaults.standard.set(try? PropertyListEncoder().encode(requiredFields), forKey: "currentProfile")
+                            self.performSegue(withIdentifier: "ProfileSetupSegue", sender: self)
+                        }
                     }
-                    if let mimeType = response.mimeType,
-                        mimeType == "application/json",
-                        let data = data,
-                        let dataString = String(data: data, encoding: .utf8) {
-                        print ("got data: \(dataString)")
-                    }
-                    self.statusLabel.text = "Done!"
-                    UserDefaults.standard.set(try? PropertyListEncoder().encode(requiredFields), forKey: "currentProfile")
-                    self.performSegue(withIdentifier: "ProfileSetupSegue", sender: self)
+                    task.resume()
                 }
-                task.resume()
             }
-        }
-        else{
-            unlockUI()
-        }
+            else{
+                self.unlockUI()
+            }
+        })
     }
     
     // code to dismiss keyboard when user clicks on background

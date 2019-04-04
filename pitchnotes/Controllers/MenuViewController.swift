@@ -50,6 +50,8 @@ class MenuViewController: UIViewController {
         
         sideMenuController?.cache(viewControllerGenerator: {
             try! Auth.auth().signOut()
+            UserDefaults.standard.set(nil, forKey: "currentProfile")
+            UserDefaults.standard.synchronize()
             return self.storyboard?.instantiateViewController(withIdentifier: "LoginController")
         }, with: "3")
         
