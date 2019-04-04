@@ -18,6 +18,12 @@ struct Profile : Codable {
     var photoURL: String
 }
 
+func getCurrentProfile() -> Profile?{
+    let data = UserDefaults.standard.value(forKey: "currentProfile") as! Data
+    let profile:Profile? = try? PropertyListDecoder().decode(Profile.self, from: data)
+    return profile
+}
+
 class ProfileSetupViewController: UIViewController {
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -201,7 +207,7 @@ class ProfileSetupViewController: UIViewController {
                         print ("got data: \(dataString)")
                     }
                     self.statusLabel.text = "Done!"
-                    UserDefaults.standard.set(try? PropertyListEncoder().encode(requiredFields), forKey: "profile")
+                    UserDefaults.standard.set(try? PropertyListEncoder().encode(requiredFields), forKey: "currentProfile")
                     self.performSegue(withIdentifier: "ProfileSetupSegue", sender: self)
                 }
                 task.resume()

@@ -28,7 +28,24 @@ class LoginController: UIViewController {
                 Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
                     guard let strongSelf = self else { return }
                     if let user = user {
-                        self?.performSegue(withIdentifier: "LoginSegue", sender: self)
+                        Firestore.firestore().collection("profile").document(user.user.uid).getDocument(completion: { (doc, err) in
+                            if let doc = doc {
+                                if(doc.exists){
+                                    print(doc.data())
+                                    let data = doc.data()
+                                    let name = data!["name"] as! String
+                                    let schoolEmail = data!["schoolEmail"] as! String
+                                    let bio = data!["bio"] as! String
+                                    let skills = data!["skills"] as! [String]
+                                    let graduate = data!["graduate"] as! Int
+                                    let avatarURL = data!["photoURL"] as! String
+                                    let userProfile = Profile(name: name, schoolEmail: schoolEmail, bio: bio, skills: skills, graduate: graduate, photoURL: avatarURL)
+                                    UserDefaults.standard.set(try? PropertyListEncoder().encode(userProfile), forKey: "currentProfile")
+                                    print("LOGIN SEGUE")
+                                    self?.performSegue(withIdentifier: "LoginSegue", sender: self)
+                                }
+                            }
+                        })
                     }
                 }
             }
