@@ -16,6 +16,9 @@ PODS:
   - Firebase/Firestore (5.5.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (= 0.13.0)
+  - Firebase/Storage (5.5.0):
+    - Firebase/CoreOnly
+    - FirebaseStorage (= 3.0.0)
   - FirebaseAnalytics (5.1.0):
     - FirebaseCore (~> 5.1)
     - FirebaseInstanceID (~> 3.2)
@@ -51,6 +54,9 @@ PODS:
   - FirebaseInstanceID (3.2.0):
     - FirebaseCore (~> 5.1)
     - GoogleUtilities/Environment (~> 5.2)
+  - FirebaseStorage (3.0.0):
+    - FirebaseCore (~> 5.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleAppMeasurement (5.1.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2.0)
     - GoogleUtilities/MethodSwizzler (~> 5.2.0)
@@ -113,6 +119,7 @@ DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
+  - Firebase/Storage
   - IQKeyboardManagerSwift
   - MessageKit
   - SideMenuSwift
@@ -129,6 +136,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseFirestore
     - FirebaseInstanceID
+    - FirebaseStorage
     - GoogleAppMeasurement
     - GoogleUtilities
     - gRPC
@@ -155,6 +163,7 @@ SPEC CHECKSUMS:
   FirebaseCore: ee4b35cf8c8e781da296cc7c15125e4608bb954d
   FirebaseFirestore: 0a6e4b9256ae39ed41258aa46213975c93908a74
   FirebaseInstanceID: 8cd2c6cfe7b9ab65ce7e248f6da7f26f6775b9be
+  FirebaseStorage: 7ca4bb7b58a25fa647b04f524033fc7cb7eb272b
   GoogleAppMeasurement: e785bdb86d3d280abc778156cec323a975f11d1d
   GoogleUtilities: 8d9fa00248c475b606fd20b562242060a20117a2
   gRPC: 77d2866b3ce1e187b2239d8adba48b98d9524c15
@@ -172,6 +181,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTSegmentedControl: 422a8fab507a02a60050476d69d577052550f592
 
-PODFILE CHECKSUM: 95b371247a77bc6cdc6fc8780b9b9fc6b91b6128
+PODFILE CHECKSUM: 6a7c3670d4dd3c84732d300cac09705f0f63197f
 
 COCOAPODS: 1.6.1

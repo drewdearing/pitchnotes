@@ -34,6 +34,7 @@
 		37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB40022502F9C0074CF3A /* Preferences.swift */; };
 		37EBB4042250321A0074CF3A /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB4032250321A0074CF3A /* SideMenuCell.swift */; };
 		37EBB40822503E910074CF3A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37EBB40722503E910074CF3A /* MenuViewController.swift */; };
+		3B0DB6A92256A4FD007BD305 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0DB6A82256A4FD007BD305 /* ImagePicker.swift */; };
 		3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2471A92232F7B5001E7D07 /* LoginController.swift */; };
 		3B2B08942234F74F000BB2A4 /* ProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */; };
 		3B2B089622350049000BB2A4 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B089522350049000BB2A4 /* CardView.swift */; };
@@ -104,6 +105,7 @@
 		37EBB40022502F9C0074CF3A /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		37EBB4032250321A0074CF3A /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		37EBB40722503E910074CF3A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		3B0DB6A82256A4FD007BD305 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		3B2471A92232F7B5001E7D07 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3B2B08932234F74F000BB2A4 /* ProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCardView.swift; sourceTree = "<group>"; };
 		3B2B089522350049000BB2A4 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				37EBB3D7224E915B0074CF3A /* Message.swift */,
 				37EBB40022502F9C0074CF3A /* Preferences.swift */,
 				37EBB3F1224F07160074CF3A /* DatabaseRepresentation.swift */,
+				3B0DB6A82256A4FD007BD305 /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 				37BD485A2235EDBA00BC06D3 /* GroupCell.swift in Sources */,
 				37EBB4042250321A0074CF3A /* SideMenuCell.swift in Sources */,
 				3B47262C224FFD0500A11A41 /* RegisterViewController.swift in Sources */,
+				3B0DB6A92256A4FD007BD305 /* ImagePicker.swift in Sources */,
 				3B2471AA2232F7B5001E7D07 /* LoginController.swift in Sources */,
 				37EBB40122502F9C0074CF3A /* Preferences.swift in Sources */,
 				3B47262E224FFD1500A11A41 /* ProfileSetupViewController.swift in Sources */,

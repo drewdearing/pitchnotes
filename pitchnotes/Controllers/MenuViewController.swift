@@ -8,6 +8,7 @@
 
 import UIKit
 import SideMenuSwift
+import Firebase
 
 class Preferences {
     static let shared = Preferences()
@@ -48,7 +49,10 @@ class MenuViewController: UIViewController {
         }, with: "2")
         
         sideMenuController?.cache(viewControllerGenerator: {
-            self.storyboard?.instantiateViewController(withIdentifier: "LoginController")
+            try! Auth.auth().signOut()
+            UserDefaults.standard.set(nil, forKey: "currentProfile")
+            UserDefaults.standard.synchronize()
+            return self.storyboard?.instantiateViewController(withIdentifier: "LoginController")
         }, with: "3")
         
         sideMenuController?.delegate = self

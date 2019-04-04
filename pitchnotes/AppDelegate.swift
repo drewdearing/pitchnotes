@@ -22,6 +22,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.disabledDistanceHandlingClasses.append(ChatViewController.self)
         IQKeyboardManager.shared.disabledToolbarClasses.append(ChatViewController.self)
+        
+        if UserDefaults.standard.bool(forKey: "hasRunBefore") == false {
+            print("The app is launching for the first time. Setting UserDefaults...")
+            do {
+                try Auth.auth().signOut()
+            } catch {}
+            UserDefaults.standard.set(true, forKey: "hasRunBefore")
+            UserDefaults.standard.synchronize()
+        } else {
+            print("The app has been launched before. Loading UserDefaults...")
+            if Auth.auth().currentUser != nil {
+                let main = UIStoryboard(name: "Main", bundle: nil)
+                if let profile = getCurrentProfile() {
+                    let viewcontroller = main.instantiateViewController(withIdentifier: "HomeViewController")
+                    self.window!.rootViewController = viewcontroller
+                    self.window?.makeKeyAndVisible();
+                }
+            }
+        }
         return true
     }
 
