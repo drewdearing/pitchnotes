@@ -33,17 +33,23 @@ class LoginController: UIViewController {
                                 if(doc.exists){
                                     print(doc.data())
                                     let data = doc.data()
-                                    let name = data!["name"] as! String
-                                    let schoolEmail = data!["schoolEmail"] as! String
-                                    let bio = data!["bio"] as! String
-                                    let skills = data!["skills"] as! [String]
-                                    let graduate = data!["graduate"] as! Int
-                                    let avatarURL = data!["photoURL"] as! String
-                                    let userProfile = Profile(name: name, schoolEmail: schoolEmail, bio: bio, skills: skills, graduate: graduate, photoURL: avatarURL)
-                                    UserDefaults.standard.set(try? PropertyListEncoder().encode(userProfile), forKey: "currentProfile")
-                                    print("LOGIN SEGUE")
-                                    self?.performSegue(withIdentifier: "LoginSegue", sender: self)
+                                    let setup = data!["setup"] as! Bool
+                                    if setup {
+                                        let name = data!["name"] as! String
+                                        let schoolEmail = data!["schoolEmail"] as! String
+                                        let bio = data!["bio"] as! String
+                                        let skills = data!["skills"] as! [String]
+                                        let graduate = data!["graduate"] as! Int
+                                        let avatarURL = data!["photoURL"] as! String
+                                        let userProfile = Profile(name: name, schoolEmail: schoolEmail, bio: bio, skills: skills, graduate: graduate, photoURL: avatarURL)
+                                        UserDefaults.standard.set(try? PropertyListEncoder().encode(userProfile), forKey: "currentProfile")
+                                        print("LOGIN SEGUE")
+                                        self?.performSegue(withIdentifier: "LoginSegue", sender: self)
+                                        return
+                                    }
                                 }
+                                self?.performSegue(withIdentifier: "LoginSetupSegue", sender: self)
+                                return
                             }
                         })
                     }

@@ -121,7 +121,7 @@
         <!--Profile Setup View Controller-->
         <scene sceneID="0Yz-4U-KDs">
             <objects>
-                <viewController id="Fde-XV-84E" customClass="ProfileSetupViewController" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileSetupViewController" id="Fde-XV-84E" customClass="ProfileSetupViewController" customModule="pitchnotes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ld8-vl-LcV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -374,6 +374,7 @@
                         <outlet property="passwordField" destination="e0h-bM-Wc5" id="DKA-0Q-x3S"/>
                         <outlet property="statusLabel" destination="zFW-JZ-7X1" id="m15-iY-CGQ"/>
                         <segue destination="4HQ-Ep-R2u" kind="show" identifier="LoginSegue" id="HzE-6f-02n"/>
+                        <segue destination="Fde-XV-84E" kind="show" identifier="LoginSetupSegue" id="mRM-Sb-lYx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -478,7 +479,7 @@
         <!--Side Menu Controller-->
         <scene sceneID="lGX-Yq-ndy">
             <objects>
-                <viewController id="4HQ-Ep-R2u" customClass="SideMenuController" customModule="SideMenuSwift" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="4HQ-Ep-R2u" customClass="SideMenuController" customModule="SideMenuSwift" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1HO-f2-1E4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,5 +604,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="LF2-no-rEj"/>
+        <segue reference="mRM-Sb-lYx"/>
     </inferredMetricsTieBreakers>
 </document>
