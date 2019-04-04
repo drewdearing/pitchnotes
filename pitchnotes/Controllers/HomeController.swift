@@ -58,11 +58,15 @@ class HomeController: UIViewController {
     
     var cardDeck = Array<CardView>()
     var ideasCurrentDeck = true
+    var pinnedDeck = false
     var currentTask:URLSessionDataTask?
     
     @IBOutlet weak var cardDeckView: UIView!
+    @IBOutlet weak var pinButton: UIButton!
     
     func switchDecks(index: Int) {
+        pinnedDeck = false
+        setPinImage()
         if index == 0{
             getIdeaDeck()
             ideasCurrentDeck = true
@@ -71,9 +75,6 @@ class HomeController: UIViewController {
             ideasCurrentDeck = false
         }
     }
-    
-    
-    
     
     @IBAction func likeButton(_ sender: Any) {
         if let card = getCurrentCard(){
@@ -99,14 +100,39 @@ class HomeController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    @IBAction func togglePinDecks(_ sender: Any) {
+        pinnedDeck = !pinnedDeck
+        setPinImage()
+        if pinnedDeck {
+            pinButton.imageView!.tintColor = .blue
+        }
+        else{
+            pinButton.imageView!.tintColor = nil
+        }
         if(ideasCurrentDeck){
             getIdeaDeck()
-            //switchButton.setImage(#imageLiteral(resourceName: "idea_top"), for: .normal)
         }
         else{
             getProfileDeck()
-            //switchButton.setImage(#imageLiteral(resourceName: "candidates_top"), for: .normal)
+        }
+    }
+    
+    func setPinImage(){
+        if pinnedDeck {
+            pinButton.setImage(#imageLiteral(resourceName: "top_right_pin_enabled2"), for: .normal)
+        }
+        else{
+            pinButton.setImage(#imageLiteral(resourceName: "top_right_pin"), for: .normal)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setPinImage()
+        if(ideasCurrentDeck){
+            getIdeaDeck()
+        }
+        else{
+            getProfileDeck()
         }
     }
     
@@ -203,7 +229,11 @@ class HomeController: UIViewController {
             }
             
             print("Bearer "+idToken!)
-            let urlPathBase = "https://us-central1-pitchnote-f1fd4.cloudfunctions.net/ideaDeck/"
+            var deckType = "ideaDeck"
+            if self.pinnedDeck {
+                deckType = "pinnedIdeas"
+            }
+            let urlPathBase = "https://us-central1-pitchnote-f1fd4.cloudfunctions.net/"+deckType+"/"
             let request = NSMutableURLRequest()
             request.url = URL(string: urlPathBase)
             request.httpMethod = "GET"
@@ -252,9 +282,12 @@ class HomeController: UIViewController {
                 // Handle error
                 return;
             }
-            
             print("Bearer "+idToken!)
-            let urlPathBase = "https://us-central1-pitchnote-f1fd4.cloudfunctions.net/candidatesDeck/"
+            var deckType = "candidatesDeck"
+            if self.pinnedDeck {
+                deckType = "pinnedCandidates"
+            }
+            let urlPathBase = "https://us-central1-pitchnote-f1fd4.cloudfunctions.net/"+deckType+"/"
             let request = NSMutableURLRequest()
             request.url = URL(string: urlPathBase)
             request.httpMethod = "GET"
