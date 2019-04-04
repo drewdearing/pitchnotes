@@ -34,6 +34,11 @@ class GroupViewController: UIViewController, UITableViewDelegate, UITableViewDat
         tableViewData = [cellData(opened: true, title: "Ideas Created By You", image: "idea-by-you", sectionData: []),
                          cellData(opened: true, title: "Ideas You Joined", image: "idea-by-others", sectionData: [])]
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         let groups = Groups()
         groups.getGroups { (matchedGroups, error) in
             if let error = error{

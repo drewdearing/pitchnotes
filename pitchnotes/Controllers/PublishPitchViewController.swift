@@ -25,6 +25,9 @@ class PublishPitchViewController: UIViewController {
     }
     
     @IBAction func publishPressed(_ sender: Any) {
+        publishButton.isEnabled = false
+        titleText.isEnabled = false
+        categoryTextView.isEnabled = false
         if let title = titleText.text,
            let category = categoryTextView.text,
            pitchDescription != ""{
@@ -44,12 +47,15 @@ class PublishPitchViewController: UIViewController {
             pitch.postNewPitch(completion: { (MyNewPitch, error) in
                 if let error = error{
                     let alert = UIAlertController(title: "Error", message: (error as! String), preferredStyle: UIAlertController.Style.alert)
-
+                    
                     // add an action (button)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
 
                     // show the alert
                     self.present(alert, animated: true, completion: nil)
+                    self.publishButton.isEnabled = true
+                    self.titleText.isEnabled = true
+                    self.categoryTextView.isEnabled = true
                     return
                 }
                 SVProgressHUD.showSuccess(withStatus: "Pitch Posted!")
