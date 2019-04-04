@@ -47,7 +47,7 @@ class CardView: UIView {
     }
     
     func swipeUp(){
-        //self.swipeRequest(like:true)
+        self.pinRequest()
         let x = 0
         let y = -self.superview!.frame.height/2
         let translate = CGAffineTransform(translationX: CGFloat(x), y: y)

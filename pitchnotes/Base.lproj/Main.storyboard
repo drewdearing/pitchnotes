@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,6 +27,13 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Jr-El-TY6">
+                                <rect key="frame" x="64" y="394.66666666666669" width="286" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v0R-QG-IYn">
                                 <rect key="frame" x="64" y="449.66666666666669" width="286" height="30"/>
@@ -67,13 +74,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Jr-El-TY6">
-                                <rect key="frame" x="64" y="394.66666666666669" width="286" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96078431369999995" blue="0.42436331960000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -148,6 +148,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" textContentType="given-name"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TdT-Jx-4OY">
+                                <rect key="frame" x="213" y="362" width="137" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="University Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cyj-c3-yXz">
                                 <rect key="frame" x="64" y="400" width="286" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -183,13 +190,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg" borderStyle="roundedRect" placeholder="Avatar URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-bk-21W">
-                                <rect key="frame" x="64" y="628" width="286" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" keyboardType="URL" textContentType="url"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Graduation Year" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ttY-BA-IeY">
                                 <rect key="frame" x="64" y="590" width="286" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -197,12 +197,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TdT-Jx-4OY">
-                                <rect key="frame" x="213" y="362" width="137" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/09/12/11/naturo-monkey-selfie.jpg" borderStyle="roundedRect" placeholder="Avatar URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3I-bk-21W">
+                                <rect key="frame" x="64" y="628" width="286" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" textContentType="family-name"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL" textContentType="url"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBc-fx-6u4">
                                 <rect key="frame" x="64" y="666" width="286" height="30"/>
@@ -412,6 +412,9 @@
                                                     <constraint firstAttribute="height" constant="80" id="Kd6-Xf-PLJ"/>
                                                 </constraints>
                                                 <state key="normal" image="top_right_pin"/>
+                                                <connections>
+                                                    <action selector="togglePinDecks:" destination="GCS-tg-GkB" eventType="touchUpInside" id="2uc-3w-fFs"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -465,6 +468,7 @@
                     </view>
                     <connections>
                         <outlet property="cardDeckView" destination="twZ-5t-Qpv" id="hfw-Fi-t3m"/>
+                        <outlet property="pinButton" destination="S6k-9n-sXv" id="Rbb-nE-W8u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="avk-cM-o4T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -595,9 +599,9 @@
         <image name="login_logo" width="790" height="593"/>
         <image name="super_like_circle" width="64" height="64"/>
         <image name="top_left_ham" width="23" height="16"/>
-        <image name="top_right_pin" width="30.5" height="30.5"/>
+        <image name="top_right_pin" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HzE-6f-02n"/>
+        <segue reference="LF2-no-rEj"/>
     </inferredMetricsTieBreakers>
 </document>
