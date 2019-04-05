@@ -251,7 +251,7 @@ class HomeController: UIViewController {
                         DispatchQueue.main.async {
                             let cardView = IdeaCardView()
                             cardView.ideaUid = idea.id
-                            cardView.userUid = currentUser!.uid
+                            cardView.userUid = idea.owner.id
                             cardView.cardUserName.text = idea.owner.name
                             cardView.cardTitle.text = idea.name
                             cardView.cardDesc.text = idea.description
