@@ -304,14 +304,14 @@
                                     <constraint firstAttribute="width" secondItem="Qda-6N-7Re" secondAttribute="height" multiplier="790:593" id="Efc-1s-7Vn"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="usera@test.com" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Af-Am-Dsm">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Af-Am-Dsm">
                                 <rect key="frame" x="64" y="339.66666666666669" width="286" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.99215686274509807" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-bM-Wc5">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e0h-bM-Wc5">
                                 <rect key="frame" x="64" y="394.66666666666669" width="286" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="textColor"/>
@@ -620,7 +620,7 @@
         <image name="top_right_pin" width="30.5" height="30.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LF2-no-rEj"/>
+        <segue reference="HzE-6f-02n"/>
         <segue reference="mRM-Sb-lYx"/>
     </inferredMetricsTieBreakers>
 </document>
