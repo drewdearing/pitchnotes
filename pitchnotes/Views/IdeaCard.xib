@@ -14,9 +14,9 @@
             <connections>
                 <outlet property="CardDetailView" destination="WwC-DZ-MOB" id="my9-Pv-0nG"/>
                 <outlet property="cardCategory" destination="GvX-MP-kC1" id="Fw2-mo-01m"/>
+                <outlet property="cardColorView" destination="ZQD-c6-Srg" id="XZn-0n-awP"/>
                 <outlet property="cardDesc" destination="gol-aR-6zh" id="QQ2-sw-qf5"/>
                 <outlet property="cardDetailView" destination="WwC-DZ-MOB" id="4Qn-6s-Ut3"/>
-                <outlet property="cardIdeaPic" destination="vwt-i8-6YR" id="h5H-nK-vhL"/>
                 <outlet property="cardProfilePic" destination="aAS-HS-bzl" id="XqV-mV-Dnn"/>
                 <outlet property="cardTitle" destination="MTD-KM-7j6" id="Gza-EA-5Dh"/>
                 <outlet property="cardUserName" destination="Y2P-NQ-8TU" id="jZd-en-ZxL"/>
@@ -31,9 +31,13 @@
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="40279285_10216911105591153_8570435745418838016_n (1)" translatesAutoresizingMaskIntoConstraints="NO" id="vwt-i8-6YR">
                     <rect key="frame" x="0.0" y="19.999999999999972" width="414" height="509.33333333333326"/>
                 </imageView>
-                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQD-c6-Srg">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZQD-c6-Srg">
                     <rect key="frame" x="0.0" y="19.999999999999972" width="414" height="509.33333333333326"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="backgroundColor" red="0.98333333333333339" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
+                <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pa1-Wh-3v6">
+                    <rect key="frame" x="0.0" y="19.999999999999972" width="414" height="509.33333333333326"/>
+                    <color key="backgroundColor" white="0.59944661458333337" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Idea Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gol-aR-6zh">
                     <rect key="frame" x="16" y="28" width="382" height="429.33333333333331"/>
@@ -88,6 +92,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="4Ex-CN-uMj" firstAttribute="top" secondItem="GvX-MP-kC1" secondAttribute="top" constant="-8" id="1GJ-N8-MPX"/>
+                <constraint firstItem="Pa1-Wh-3v6" firstAttribute="trailing" secondItem="ZQD-c6-Srg" secondAttribute="trailing" id="2G3-7h-Mmg"/>
                 <constraint firstItem="ZQD-c6-Srg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="39d-gN-2sR"/>
                 <constraint firstItem="WwC-DZ-MOB" firstAttribute="top" secondItem="vwt-i8-6YR" secondAttribute="bottom" id="6t2-Qi-lEB"/>
                 <constraint firstItem="WwC-DZ-MOB" firstAttribute="top" secondItem="Y2P-NQ-8TU" secondAttribute="bottom" constant="4" id="7bn-Pf-Qjn"/>
@@ -103,8 +108,10 @@
                 <constraint firstItem="GvX-MP-kC1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Vp3-bB-oCO"/>
                 <constraint firstItem="ZQD-c6-Srg" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="adg-8j-VvG"/>
                 <constraint firstItem="aAS-HS-bzl" firstAttribute="top" secondItem="gol-aR-6zh" secondAttribute="bottom" constant="8" id="ag8-vt-ubR"/>
+                <constraint firstItem="Pa1-Wh-3v6" firstAttribute="top" secondItem="ZQD-c6-Srg" secondAttribute="top" id="apx-97-OtA"/>
                 <constraint firstItem="ZQD-c6-Srg" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bZB-qB-rHW"/>
                 <constraint firstItem="MTD-KM-7j6" firstAttribute="leading" secondItem="aAS-HS-bzl" secondAttribute="trailing" constant="8" id="dLU-4d-HnT"/>
+                <constraint firstItem="Pa1-Wh-3v6" firstAttribute="leading" secondItem="ZQD-c6-Srg" secondAttribute="leading" id="dke-TV-su6"/>
                 <constraint firstItem="WwC-DZ-MOB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="centerY" multiplier="1.4" id="eOt-Jg-cmc"/>
                 <constraint firstItem="Y2P-NQ-8TU" firstAttribute="leading" secondItem="aAS-HS-bzl" secondAttribute="trailing" constant="8" id="g84-w4-gO0"/>
                 <constraint firstItem="WwC-DZ-MOB" firstAttribute="top" secondItem="ZQD-c6-Srg" secondAttribute="bottom" id="gHt-OO-U7U"/>
@@ -114,12 +121,13 @@
                 <constraint firstItem="vwt-i8-6YR" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lWd-ly-69s"/>
                 <constraint firstItem="gol-aR-6zh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="mux-4z-hat"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WwC-DZ-MOB" secondAttribute="trailing" id="rQF-nB-Z7V"/>
+                <constraint firstItem="Pa1-Wh-3v6" firstAttribute="bottom" secondItem="ZQD-c6-Srg" secondAttribute="bottom" id="v78-Fd-Dqn"/>
                 <constraint firstItem="4Ex-CN-uMj" firstAttribute="bottom" secondItem="GvX-MP-kC1" secondAttribute="bottom" constant="8" id="wV3-di-WTW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Y2P-NQ-8TU" secondAttribute="trailing" constant="8" id="wZd-Uh-Rti"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vwt-i8-6YR" secondAttribute="trailing" id="woP-Q1-Qzw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
+            <point key="canvasLocation" x="52.173913043478265" y="48.097826086956523"/>
         </view>
     </objects>
     <resources>

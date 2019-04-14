@@ -14,6 +14,7 @@ struct MyNewPitch: Codable{
     let name: String
     let description: String
     let category: String
+    let hue: Float
 }
 
 enum CreatePitchError: Error {

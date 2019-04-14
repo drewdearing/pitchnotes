@@ -12,7 +12,7 @@ import FirebaseAuth
 class IdeaCardView: CardView {
     
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var cardIdeaPic: UIImageView!
+    @IBOutlet weak var cardColorView: UIView!
     @IBOutlet weak var cardDetailView: UIView!
     @IBOutlet weak var cardProfilePic: UIImageView!
     @IBOutlet weak var cardUserName: UILabel!

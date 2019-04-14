@@ -13,6 +13,8 @@ class PublishPitchViewController: UIViewController {
     @IBOutlet weak var publishButton: UIButton!
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var categoryTextView: UITextField!
+    @IBOutlet weak var colorSlider: UISlider!
+    @IBOutlet weak var colorView: UIView!
     
     var pitchDescription = ""
     
@@ -21,7 +23,13 @@ class PublishPitchViewController: UIViewController {
         
         //rounded corner
         publishButton.layer.cornerRadius = 5
+        
+        colorView.backgroundColor = UIColor(hue: CGFloat(colorSlider!.value), saturation: 1, brightness: 1, alpha: 1)
 
+    }
+    
+    @IBAction func colorChanged(_ sender: Any) {
+        colorView.backgroundColor = UIColor(hue: CGFloat(colorSlider!.value), saturation: 1, brightness: 1, alpha: 1)
     }
     
     @IBAction func publishPressed(_ sender: Any) {
@@ -42,7 +50,7 @@ class PublishPitchViewController: UIViewController {
                 return
             }
             
-            let myNewPitch = MyNewPitch(name: title, description: pitchDescription, category: category)
+            let myNewPitch = MyNewPitch(name: title, description: pitchDescription, category: category, hue: colorSlider.value)
             let pitch = NewPitch()
             pitch.postNewPitch(completion: { (MyNewPitch, error) in
                 if let error = error{

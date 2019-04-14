@@ -30,6 +30,7 @@ struct Idea: Codable {
     var name: String
     var category: String
     var description: String
+    var hue: Float
     var owner: IdeaOwner
 }
 
@@ -52,6 +53,7 @@ struct IdeaOwner: Codable {
 struct CandidateIdea: Codable {
     var id: String
     var name: String
+    var hue: Float
 }
 
 class HomeController: UIViewController {
@@ -260,8 +262,8 @@ class HomeController: UIViewController {
                             let data = try? Data(contentsOf: url!)
                             if let imageData = data {
                                 cardView.cardProfilePic.image = UIImage(data:imageData)
-                                cardView.cardIdeaPic.image = UIImage(data:imageData)
                             }
+                            cardView.cardColorView.backgroundColor = UIColor(hue: CGFloat(idea.hue), saturation: 1, brightness: 1, alpha: 1)
                             self.cardDeckView.addSubview(cardView)
                             cardView.fillSuperview()
                             self.cardDeck.append(cardView)
@@ -327,7 +329,7 @@ class HomeController: UIViewController {
                             let data = try? Data(contentsOf: url!)
                             if let imageData = data {
                                 cardView.cardProfilePic.image = UIImage(data:imageData)
-                                cardView.cardIdeaPic.image = UIImage(data:imageData)
+                                cardView.cardIdeaPic.backgroundColor = UIColor(hue: CGFloat(candidate.idea.hue), saturation: 1, brightness: 1, alpha: 1)
                             }
                             self.cardDeckView.addSubview(cardView)
                             cardView.fillSuperview()
