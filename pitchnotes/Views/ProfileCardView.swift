@@ -19,6 +19,10 @@ class ProfileCardView: CardView {
     @IBOutlet weak var cardProfilePic: UIImageView!
     @IBOutlet weak var cardIdeaPic: UIImageView!
     @IBOutlet weak var cardClassYear: UILabel!
+    @IBOutlet weak var skillLabel1: UILabel!
+    @IBOutlet weak var skillLabel2: UILabel!
+    @IBOutlet weak var skillLabel3: UILabel!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)

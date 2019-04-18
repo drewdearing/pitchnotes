@@ -325,6 +325,19 @@ class HomeController: UIViewController {
                             cardView.cardIdeaName.text = candidate.idea.name
                             cardView.cardUserBio.text = candidate.bio
                             cardView.cardClassYear.text = "Class of "+String(candidate.graduate)
+                            
+                            if candidate.skills.count > 0 {
+                                cardView.skillLabel1.text = candidate.skills[0]
+                            }
+                            
+                            if candidate.skills.count > 1 {
+                                cardView.skillLabel2.text = candidate.skills[1]
+                            }
+                            
+                            if candidate.skills.count > 2 {
+                                cardView.skillLabel3.text = candidate.skills[2]
+                            }
+                            
                             let url = URL(string: candidate.photoURL)
                             let data = try? Data(contentsOf: url!)
                             if let imageData = data {

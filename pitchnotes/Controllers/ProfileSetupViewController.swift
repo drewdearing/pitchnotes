@@ -36,7 +36,6 @@ class ProfileSetupViewController: UIViewController, ImagePickerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
-    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var bioField: UITextField!
     @IBOutlet weak var skill1Field: UITextField!
     @IBOutlet weak var skill2Field: UITextField!
@@ -49,7 +48,6 @@ class ProfileSetupViewController: UIViewController, ImagePickerDelegate {
     func unlockUI(){
         self.firstNameField.isUserInteractionEnabled = true
         self.lastNameField.isUserInteractionEnabled = true
-        self.emailField.isUserInteractionEnabled = true
         self.bioField.isUserInteractionEnabled = true
         self.skill1Field.isUserInteractionEnabled = true
         self.skill2Field.isUserInteractionEnabled = true
@@ -62,7 +60,6 @@ class ProfileSetupViewController: UIViewController, ImagePickerDelegate {
     func lockUI(){
         self.firstNameField.isUserInteractionEnabled = false
         self.lastNameField.isUserInteractionEnabled = false
-        self.emailField.isUserInteractionEnabled = false
         self.bioField.isUserInteractionEnabled = false
         self.skill1Field.isUserInteractionEnabled = false
         self.skill2Field.isUserInteractionEnabled = false
@@ -122,12 +119,8 @@ class ProfileSetupViewController: UIViewController, ImagePickerDelegate {
     }
     
     func getEmail() -> String? {
-        if let email = emailField.text {
-            let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-            let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-            if emailTest.evaluate(with: email) {
-                return email
-            }
+        if let currentUser = Auth.auth().currentUser{
+            return currentUser.email
         }
         return nil
     }
