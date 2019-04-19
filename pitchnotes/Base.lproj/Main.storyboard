@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -278,6 +278,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faw-e0-Que" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1400" y="763"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WTH-LO-Eh4">
+            <objects>
+                <viewController id="QYM-Oq-W73" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ejo-uq-Uth">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9a5-Hr-lVZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Report" id="D6Z-KZ-qei">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="top_left_ham" id="caB-cP-0EU">
+                                            <color key="tintColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Submit" id="834-Gr-zfG"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7LG-bc-dQx">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" red="0.97647982835769653" green="0.97645872831344604" blue="0.97646290063858032" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7LG-bc-dQx" secondAttribute="trailing" id="53X-Nm-pTK"/>
+                            <constraint firstItem="9a5-Hr-lVZ" firstAttribute="trailing" secondItem="9hL-fV-siz" secondAttribute="trailing" id="Gi0-YB-3OK"/>
+                            <constraint firstItem="9a5-Hr-lVZ" firstAttribute="top" secondItem="7LG-bc-dQx" secondAttribute="bottom" id="NUp-aN-yhA"/>
+                            <constraint firstItem="7LG-bc-dQx" firstAttribute="leading" secondItem="Ejo-uq-Uth" secondAttribute="leading" id="V58-GK-Zk0"/>
+                            <constraint firstItem="9a5-Hr-lVZ" firstAttribute="leading" secondItem="9hL-fV-siz" secondAttribute="leading" id="iYq-IV-LtX"/>
+                            <constraint firstItem="7LG-bc-dQx" firstAttribute="top" secondItem="Ejo-uq-Uth" secondAttribute="top" id="qWD-Lg-iYO"/>
+                            <constraint firstItem="9a5-Hr-lVZ" firstAttribute="top" secondItem="9hL-fV-siz" secondAttribute="top" id="tdQ-7r-nzy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9hL-fV-siz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cih-Mm-Kw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2476.811594202899" y="762.72321428571422"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -606,10 +647,10 @@
         <image name="login_logo" width="790" height="593"/>
         <image name="super_like_circle" width="64" height="64"/>
         <image name="top_left_ham" width="23" height="16"/>
-        <image name="top_right_pin" width="30" height="30"/>
+        <image name="top_right_pin" width="30.5" height="30.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LF2-no-rEj"/>
-        <segue reference="W8e-pl-4Ph"/>
+        <segue reference="HzE-6f-02n"/>
+        <segue reference="mRM-Sb-lYx"/>
     </inferredMetricsTieBreakers>
 </document>

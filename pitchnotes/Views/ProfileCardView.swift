@@ -22,8 +22,7 @@ class ProfileCardView: CardView {
     @IBOutlet weak var skillLabel1: UILabel!
     @IBOutlet weak var skillLabel2: UILabel!
     @IBOutlet weak var skillLabel3: UILabel!
-    
-    
+    weak var parentView: HomeController!
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -61,5 +60,23 @@ class ProfileCardView: CardView {
         addSubview(swipeOverlay)
         swipeOverlay.fillSuperview()
     }
+    
+    @IBAction func onReportPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Report", message: "Do you want to report this candidate for inappropriate content?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                SVProgressHUD.showSuccess(withStatus: "Candidate was reported!")
+            }}))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        parentView.present(alert, animated: true, completion: nil)
+    }
+    
     
 }

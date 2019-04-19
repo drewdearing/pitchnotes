@@ -33,6 +33,7 @@ class PublishPitchViewController: UIViewController {
     }
     
     @IBAction func publishPressed(_ sender: Any) {
+        SVProgressHUD.show()
         publishButton.isEnabled = false
         titleText.isEnabled = false
         categoryTextView.isEnabled = false
@@ -66,12 +67,14 @@ class PublishPitchViewController: UIViewController {
                     self.categoryTextView.isEnabled = true
                     return
                 }
+                SVProgressHUD.dismiss()
                 SVProgressHUD.showSuccess(withStatus: "Pitch Posted!")
                 self.dismiss(animated: true, completion: nil)
 
             }, myNewPitch: myNewPitch)
 
         }else{
+            SVProgressHUD.dismiss()
             // create the alert
             let alert = UIAlertController(title: "Warning", message: "Please fill in all the fields before publish", preferredStyle: UIAlertController.Style.alert)
             

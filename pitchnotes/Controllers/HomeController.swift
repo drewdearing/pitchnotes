@@ -252,6 +252,7 @@ class HomeController: UIViewController {
                     ideaDeck.deck.forEach({ (idea) in
                         DispatchQueue.main.async {
                             let cardView = IdeaCardView()
+                            cardView.parentView = self
                             cardView.ideaUid = idea.id
                             cardView.userUid = idea.owner.id
                             cardView.cardUserName.text = idea.owner.name
@@ -319,6 +320,7 @@ class HomeController: UIViewController {
                     candidatesDeck.deck.forEach({ (candidate) in
                         DispatchQueue.main.async {
                             let cardView = ProfileCardView()
+                            cardView.parentView = self
                             cardView.ideaUid = candidate.idea.id
                             cardView.userUid = candidate.id
                             cardView.cardUserName.text = candidate.name
