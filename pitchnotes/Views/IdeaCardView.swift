@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFunctions
 import SVProgressHUD
 
 class IdeaCardView: CardView {
@@ -60,6 +61,7 @@ class IdeaCardView: CardView {
     }
     
     @IBAction func onReportPressed(_ sender: Any) {
+        var functions = Functions.functions()
         let alert = UIAlertController(title: "Report", message: "Do you want to report this idea for inappropriate content?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { action in
             switch action.style{
@@ -70,6 +72,15 @@ class IdeaCardView: CardView {
                 print("cancel")
                 
             case .destructive:
+                functions.httpsCallable("report").call(["id": self.cardUserName.text]) { (result, error) in
+                    if let error = error as NSError? {
+                        if error.domain == FunctionsErrorDomain {
+                            let code = FunctionsErrorCode(rawValue: error.code)
+                            let message = error.localizedDescription
+                            let details = error.userInfo[FunctionsErrorDetailsKey]
+                        }
+                    }
+                }
                 SVProgressHUD.showSuccess(withStatus: "Idea was reported!")
             }}))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
