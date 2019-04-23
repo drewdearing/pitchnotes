@@ -13,23 +13,42 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var registerButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    func lockUI(){
+        emailField.isEnabled = false
+        passwordField.isEnabled = false
+        loginButton.isEnabled = false
+        registerButton.isEnabled = false
+    }
+    
+    func unlockUI(){
+        emailField.isEnabled = true
+        passwordField.isEnabled = true
+        loginButton.isEnabled = true
+        registerButton.isEnabled = true
+    }
+    
+    
     @IBAction func loginButton(_ sender: Any) {
-        
         if let email = emailField.text {
             print("email done")
             if let password = passwordField.text {
+                statusLabel.text = ""
+                lockUI()
                 print("password done")
                 Auth.auth().signIn(withEmail: email, password: password) { [weak self] user, error in
                     guard let strongSelf = self else { return }
                     if let user = user {
                         Firestore.firestore().collection("profile").document(user.user.uid).getDocument(completion: { (doc, err) in
                             if let doc = doc {
+                                self?.unlockUI()
                                 if(doc.exists){
                                     print(doc.data())
                                     let data = doc.data()
@@ -53,10 +72,13 @@ class LoginController: UIViewController {
                             }
                         })
                     }
+                    else{
+                        self?.statusLabel.text = "Could not login!"
+                        self?.unlockUI()
+                    }
                 }
             }
         }
-        //alert
     }
     
     // code to dismiss keyboard when user clicks on background

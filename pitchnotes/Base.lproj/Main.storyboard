@@ -408,7 +408,9 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="2Af-Am-Dsm" id="gci-Mh-gUF"/>
+                        <outlet property="loginButton" destination="MOy-LH-jer" id="kgO-bX-8af"/>
                         <outlet property="passwordField" destination="e0h-bM-Wc5" id="DKA-0Q-x3S"/>
+                        <outlet property="registerButton" destination="RN6-Wx-tGg" id="QO4-g4-72O"/>
                         <outlet property="statusLabel" destination="zFW-JZ-7X1" id="m15-iY-CGQ"/>
                         <segue destination="4HQ-Ep-R2u" kind="show" identifier="LoginSegue" id="HzE-6f-02n"/>
                         <segue destination="Fde-XV-84E" kind="show" identifier="LoginSetupSegue" id="mRM-Sb-lYx"/>
@@ -650,7 +652,7 @@
         <image name="top_right_pin" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HzE-6f-02n"/>
+        <segue reference="LF2-no-rEj"/>
         <segue reference="mRM-Sb-lYx"/>
     </inferredMetricsTieBreakers>
 </document>
